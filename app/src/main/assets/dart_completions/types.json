@@ -1,0 +1,291 @@
+{
+  "version": 1,
+  "types": [
+    { "name": "String", "description": "نص", "category": "core" },
+    { "name": "int", "description": "عدد صحيح", "category": "core" },
+    { "name": "double", "description": "عدد عشري", "category": "core" },
+    { "name": "num", "description": "عدد (int أو double)", "category": "core" },
+    { "name": "bool", "description": "منطقي", "category": "core" },
+    { "name": "Object", "description": "أي كائن", "category": "core" },
+    { "name": "Null", "description": "النوع الفارغ", "category": "core" },
+    { "name": "Function", "description": "دالة", "category": "core" },
+    { "name": "List", "description": "قائمة مرتبة", "category": "collection" },
+    { "name": "Set", "description": "مجموعة فريدة", "category": "collection" },
+    { "name": "Map", "description": "خريطة مفتاح-قيمة", "category": "collection" },
+    { "name": "Iterable", "description": "قابل للتكرار", "category": "collection" },
+    { "name": "Iterator", "description": "مكرِّر", "category": "collection" },
+    { "name": "Future", "description": "قيمة مستقبلية", "category": "async" },
+    { "name": "Stream", "description": "تيار أحداث", "category": "async" },
+    { "name": "StreamController", "description": "تحكم بالتيار", "category": "async" },
+    { "name": "StreamSubscription", "description": "اشتراك بالتيار", "category": "async" },
+    { "name": "Timer", "description": "مؤقت", "category": "async" },
+    { "name": "Completer", "description": "مُكمل Future يدوياً", "category": "async" },
+    { "name": "Duration", "description": "مدة زمنية", "category": "time" },
+    { "name": "DateTime", "description": "تاريخ ووقت", "category": "time" },
+    { "name": "Widget", "description": "عنصر واجهة أساسي", "category": "flutter" },
+    { "name": "StatelessWidget", "description": "Widget بدون حالة", "category": "flutter" },
+    { "name": "StatefulWidget", "description": "Widget بحالة", "category": "flutter" },
+    { "name": "State", "description": "حالة Widget", "category": "flutter" },
+    { "name": "BuildContext", "description": "سياق البناء", "category": "flutter" },
+    { "name": "Key", "description": "مفتاح Widget", "category": "flutter" },
+    { "name": "GlobalKey", "description": "مفتاح عام", "category": "flutter" },
+    { "name": "ValueKey", "description": "مفتاح قيمة", "category": "flutter" },
+    { "name": "UniqueKey", "description": "مفتاح فريد", "category": "flutter" },
+    { "name": "MaterialApp", "description": "تطبيق Material", "category": "material" },
+    { "name": "CupertinoApp", "description": "تطبيق iOS", "category": "cupertino" },
+    { "name": "WidgetsApp", "description": "تطبيق widgets", "category": "flutter" },
+    { "name": "Scaffold", "description": "هيكل صفحة Material", "category": "material" },
+    { "name": "AppBar", "description": "شريط علوي", "category": "material" },
+    { "name": "ThemeData", "description": "بيانات المظهر", "category": "material" },
+    { "name": "Theme", "description": "مظهر الواجهة", "category": "material" },
+    { "name": "TextStyle", "description": "نمط نصي", "category": "painting" },
+    { "name": "TextSpan", "description": "جزء نصي", "category": "painting" },
+    { "name": "Color", "description": "لون", "category": "painting" },
+    { "name": "Colors", "description": "لوحة ألوان", "category": "material" },
+    { "name": "IconData", "description": "أيقونة", "category": "painting" },
+    { "name": "Icons", "description": "أيقونات Material", "category": "material" },
+    { "name": "Image", "description": "صورة", "category": "widgets" },
+    { "name": "ImageProvider", "description": "مزوّد صورة", "category": "painting" },
+    { "name": "AssetImage", "description": "صورة من assets", "category": "painting" },
+    { "name": "NetworkImage", "description": "صورة من الإنترنت", "category": "painting" },
+    { "name": "FileImage", "description": "صورة من ملف", "category": "painting" },
+    { "name": "MemoryImage", "description": "صورة من الذاكرة", "category": "painting" },
+    { "name": "Border", "description": "حدود", "category": "painting" },
+    { "name": "BorderRadius", "description": "زوايا دائرية", "category": "painting" },
+    { "name": "BoxDecoration", "description": "تزيين صندوق", "category": "painting" },
+    { "name": "BoxShadow", "description": "ظل", "category": "painting" },
+    { "name": "BoxFit", "description": "طريقة ملاءمة", "category": "painting" },
+    { "name": "EdgeInsets", "description": "حشوة/هامش", "category": "painting" },
+    { "name": "Alignment", "description": "محاذاة", "category": "painting" },
+    { "name": "Axis", "description": "محور", "category": "painting" },
+    { "name": "MainAxisAlignment", "description": "المحور الرئيسي", "category": "painting" },
+    { "name": "CrossAxisAlignment", "description": "المحور المتقاطع", "category": "painting" },
+    { "name": "MainAxisSize", "description": "حجم المحور", "category": "painting" },
+    { "name": "TextAlign", "description": "محاذاة نص", "category": "painting" },
+    { "name": "TextDirection", "description": "اتجاه نص", "category": "painting" },
+    { "name": "FontWeight", "description": "وزن الخط", "category": "painting" },
+    { "name": "FontStyle", "description": "نمط الخط", "category": "painting" },
+    { "name": "TextOverflow", "description": "فيض النص", "category": "painting" },
+    { "name": "TextBaseline", "description": "خط النص", "category": "painting" },
+    { "name": "TextDecoration", "description": "زخرفة نص", "category": "painting" },
+    { "name": "PaintingStyle", "description": "نمط الرسم", "category": "painting" },
+    { "name": "Path", "description": "مسار رسم", "category": "painting" },
+    { "name": "Canvas", "description": "قماش الرسم", "category": "painting" },
+    { "name": "Paint", "description": "فرشاة الرسم", "category": "painting" },
+    { "name": "Offset", "description": "إحداثيات", "category": "painting" },
+    { "name": "Size", "description": "حجم", "category": "painting" },
+    { "name": "Rect", "description": "مستطيل", "category": "painting" },
+    { "name": "Radius", "description": "نصف قطر", "category": "painting" },
+    { "name": "CustomPainter", "description": "رسام مخصص", "category": "painting" },
+    { "name": "CustomPaint", "description": "رسم مخصص", "category": "widgets" },
+    { "name": "AnimationController", "description": "تحكم بالحركة", "category": "animation" },
+    { "name": "Animation", "description": "حركة", "category": "animation" },
+    { "name": "Tween", "description": "مدى حركة", "category": "animation" },
+    { "name": "Curve", "description": "منحنى حركة", "category": "animation" },
+    { "name": "Curves", "description": "منحنيات جاهزة", "category": "animation" },
+    { "name": "TweenAnimationBuilder", "description": "بناء حركة", "category": "animation" },
+    { "name": "ChangeNotifier", "description": "مُنبّه تغيير", "category": "foundation" },
+    { "name": "ValueNotifier", "description": "قيمة قابلة للملاحظة", "category": "foundation" },
+    { "name": "ValueListenable", "description": "قيمة ملاحَظة", "category": "foundation" },
+    { "name": "Listenable", "description": "قابل للاستماع", "category": "foundation" },
+    { "name": "Route", "description": "صفحة تنقّل", "category": "widgets" },
+    { "name": "MaterialPageRoute", "description": "مسار Material", "category": "material" },
+    { "name": "Navigator", "description": "مدير التنقل", "category": "widgets" },
+    { "name": "Router", "description": "موجّه", "category": "widgets" },
+    { "name": "MediaQuery", "description": "استعلام وسائط", "category": "widgets" },
+    { "name": "MediaQueryData", "description": "بيانات الشاشة", "category": "widgets" },
+    { "name": "InheritedWidget", "description": "Widget موروث", "category": "widgets" },
+    { "name": "InheritedModel", "description": "نموذج موروث", "category": "widgets" },
+    { "name": "FocusNode", "description": "عقدة التركيز", "category": "widgets" },
+    { "name": "ScrollController", "description": "تحكم بالتمرير", "category": "widgets" },
+    { "name": "TabController", "description": "تحكم بالتبويبات", "category": "material" },
+    { "name": "PageController", "description": "تحكم بالصفحات", "category": "widgets" },
+    { "name": "TextEditingController", "description": "تحكم بحقل النص", "category": "widgets" },
+    { "name": "AnimationController", "description": "تحكم بالحركة", "category": "animation" },
+    { "name": "List", "description": "قائمة عامة", "category": "collection" },
+    { "name": "FutureBuilder", "description": "بانٍ من Future", "category": "widgets" },
+    { "name": "StreamBuilder", "description": "بانٍ من Stream", "category": "widgets" },
+    { "name": "ConnectionState", "description": "حالة الاتصال", "category": "widgets" },
+    { "name": "AsyncSnapshot", "description": "لقطة غير متزامنة", "category": "widgets" },
+    { "name": "TextInputType", "description": "نوع الإدخال", "category": "services" },
+    { "name": "TextInputAction", "description": "إجراء الإدخال", "category": "services" },
+    { "name": "TextInputFormatter", "description": "مُنسّق الإدخال", "category": "services" },
+    { "name": "InputDecoration", "description": "تزيين حقل الإدخال", "category": "material" },
+    { "name": "ThemeMode", "description": "نمط المظهر", "category": "material" },
+    { "name": "Brightness", "description": "سطوع", "category": "material" },
+    { "name": "Orientation", "description": "اتجاه الشاشة", "category": "widgets" },
+    { "name": "Locale", "description": "لغة", "category": "widgets" },
+    { "name": "AppLifecycleState", "description": "حالة دورة حياة التطبيق", "category": "widgets" },
+    { "name": "MaterialColor", "description": "لون Material", "category": "material" },
+    { "name": "MaterialAccentColor", "description": "لون توكيدي", "category": "material" },
+    { "name": "ColorScheme", "description": "نظام ألوان", "category": "material" },
+    { "name": "TextTheme", "description": "نمط نصوص", "category": "material" },
+    { "name": "IconThemeData", "description": "نمط أيقونات", "category": "material" },
+    { "name": "ButtonThemeData", "description": "نمط أزرار", "category": "material" },
+    { "name": "InputDecorationTheme", "description": "نمط حقول الإدخال", "category": "material" },
+    { "name": "SafeArea", "description": "منطقة آمنة", "category": "widgets" },
+    { "name": "SliverChildBuilderDelegate", "description": "باني Sliver", "category": "widgets" },
+    { "name": "SliverGridDelegate", "description": "مُنسّق شبكة Sliver", "category": "widgets" },
+    { "name": "SliverList", "description": "قائمة Sliver", "category": "widgets" },
+    { "name": "SliverGrid", "description": "شبكة Sliver", "category": "widgets" },
+    { "name": "SliverAppBar", "description": "شريط Sliver", "category": "material" },
+    { "name": "CustomScrollView", "description": "تمرير مخصص", "category": "widgets" },
+    { "name": "PageStorageKey", "description": "مفتاح تخزين الصفحة", "category": "widgets" },
+    { "name": "WidgetState", "description": "حالة Widget", "category": "widgets" },
+    { "name": "ScrollPhysics", "description": "فيزياء التمرير", "category": "widgets" },
+    { "name": "ScrollBehavior", "description": "سلوك التمرير", "category": "widgets" },
+    { "name": "OrientationBuilder", "description": "بانٍ حسب الاتجاه", "category": "widgets" },
+    { "name": "LayoutBuilder", "description": "بانٍ حسب القياسات", "category": "widgets" },
+    { "name": "Builder", "description": "بانٍ عام", "category": "widgets" },
+    { "name": "FutureOr", "description": "Future أو قيمة", "category": "async" },
+    { "name": "Completer", "description": "مُكمل يدوي", "category": "async" },
+    { "name": "Zone", "description": "منطقة تنفيذ", "category": "async" },
+    { "name": "Isolate", "description": "خيط تنفيذ", "category": "async" },
+    { "name": "ReceivePort", "description": "منفذ استقبال", "category": "async" },
+    { "name": "SendPort", "description": "منفذ إرسال", "category": "async" },
+    { "name": "Uint8List", "description": "قائمة بايتات", "category": "typed_data" },
+    { "name": "ByteData", "description": "بيانات بايتات", "category": "typed_data" },
+    { "name": "Float32List", "description": "قائمة float32", "category": "typed_data" },
+    { "name": "RegExp", "description": "تعبير نمطي", "category": "core" },
+    { "name": "Match", "description": "مطابقة", "category": "core" },
+    { "name": "Uri", "description": "معرّف موارد", "category": "core" },
+    { "name": "BigInt", "description": "عدد كبير", "category": "core" },
+    { "name": "Duration", "description": "مدة", "category": "core" },
+    { "name": "Symbol", "description": "رمز", "category": "core" },
+    { "name": "Type", "description": "نوع", "category": "core" }
+  ],
+  "enums": [
+    {
+      "name": "MainAxisAlignment",
+      "values": ["start", "center", "end", "spaceBetween", "spaceAround", "spaceEvenly"]
+    },
+    {
+      "name": "CrossAxisAlignment",
+      "values": ["start", "center", "end", "stretch", "baseline"]
+    },
+    {
+      "name": "MainAxisSize",
+      "values": ["min", "max"]
+    },
+    {
+      "name": "TextAlign",
+      "values": ["left", "right", "center", "justify", "start", "end"]
+    },
+    {
+      "name": "TextOverflow",
+      "values": ["clip", "fade", "ellipsis", "visible"]
+    },
+    {
+      "name": "TextDirection",
+      "values": ["ltr", "rtl"]
+    },
+    {
+      "name": "FontWeight",
+      "values": ["w100", "w200", "w300", "w400", "w500", "w600", "w700", "w800", "w900", "normal", "bold"]
+    },
+    {
+      "name": "FontStyle",
+      "values": ["normal", "italic"]
+    },
+    {
+      "name": "TextDecoration",
+      "values": ["none", "underline", "overline", "lineThrough"]
+    },
+    {
+      "name": "Axis",
+      "values": ["horizontal", "vertical"]
+    },
+    {
+      "name": "Alignment",
+      "values": ["topLeft", "topCenter", "topRight", "centerLeft", "center", "centerRight", "bottomLeft", "bottomCenter", "bottomRight"]
+    },
+    {
+      "name": "BoxFit",
+      "values": ["fill", "contain", "cover", "fitWidth", "fitHeight", "none", "scaleDown"]
+    },
+    {
+      "name": "StackFit",
+      "values": ["loose", "expand", "passthrough"]
+    },
+    {
+      "name": "BorderStyle",
+      "values": ["none", "solid"]
+    },
+    {
+      "name": "ScrollPhysics",
+      "values": ["BouncingScrollPhysics", "ClampingScrollPhysics", "NeverScrollableScrollPhysics", "AlwaysScrollableScrollPhysics"]
+    },
+    {
+      "name": "Brightness",
+      "values": ["light", "dark"]
+    },
+    {
+      "name": "ThemeMode",
+      "values": ["system", "light", "dark"]
+    },
+    {
+      "name": "ConnectionState",
+      "values": ["none", "waiting", "active", "done"]
+    },
+    {
+      "name": "AppLifecycleState",
+      "values": ["detached", "resumed", "inactive", "paused"]
+    },
+    {
+      "name": "Orientation",
+      "values": ["portrait", "landscape"]
+    },
+    {
+      "name": "DismissDirection",
+      "values": ["horizontal", "vertical", "endToStart", "startToEnd", "up", "down", "none"]
+    },
+    {
+      "name": "SnackBarBehavior",
+      "values": ["fixed", "floating"]
+    },
+    {
+      "name": "DialogRoute",
+      "values": ["showDialog", "showModalBottomSheet", "showGeneralDialog"]
+    },
+    {
+      "name": "PaintingStyle",
+      "values": ["fill", "stroke"]
+    },
+    {
+      "name": "StrokeCap",
+      "values": ["butt", "round", "square"]
+    },
+    {
+      "name": "StrokeJoin",
+      "values": ["miter", "round", "bevel"]
+    },
+    {
+      "name": "BlendMode",
+      "values": ["srcOver", "src", "dst", "dstOver", "srcIn", "dstIn", "srcOut", "dstOut", "srcATop", "dstATop", "xor", "plus", "modulate", "screen", "overlay", "darken", "lighten", "colorDodge", "colorBurn", "hardLight", "softLight", "difference", "exclusion", "multiply", "hue", "saturation", "color", "luminosity"]
+    },
+    {
+      "name": "TileMode",
+      "values": ["clamp", "repeated", "mirror"]
+    },
+    {
+      "name": "FilterQuality",
+      "values": ["none", "low", "medium", "high"]
+    },
+    {
+      "name": "Clip",
+      "values": ["none", "hardEdge", "antiAlias", "antiAliasWithSaveLayer"]
+    },
+    {
+      "name": "HitTestBehavior",
+      "values": ["deferToChild", "opaque", "translucent"]
+    },
+    {
+      "name": "ImageRepeat",
+      "values": ["noRepeat", "repeat", "repeatX", "repeatY"]
+    },
+    {
+      "name": "ImageFormat",
+      "values": ["png", "jpeg", "rawRgba"]
+    }
+  ]
+}

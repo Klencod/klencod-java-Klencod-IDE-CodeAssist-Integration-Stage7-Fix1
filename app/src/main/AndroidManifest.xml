@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.flutteride.codweva">
+
+    <!-- ============================================================ -->
+    <!-- الأذونات الأساسية                                            -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+
+    <!-- ============================================================ -->
+    <!-- Foreground Service                                          -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!-- ============================================================ -->
+    <!-- إشعارات (Android 13+)                                       -->
+    <!-- ============================================================ -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- ============================================================ -->
+    <!-- إذن الوصول الكامل للتخزين (Android 11+)                      -->
+    <!-- ============================================================ -->
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <!-- ============================================================ -->
+    <!-- التطبيق                                                      -->
+    <!-- ============================================================ -->
+    <application
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:requestLegacyExternalStorage="true">
+
+        <!-- ============================================================ -->
+        <!-- خدمة البناء في الخلفية (Foreground Service)                 -->
+        <!-- ============================================================ -->
+        <service
+            android:name=".BuildForegroundService"
+            android:foregroundServiceType="dataSync"
+            android:exported="false"
+            android:stopWithTask="false" />
+
+        <!-- Local on-device Android build; deliberately isolated from the GitHub build service. -->
+        <service
+            android:name=".LocalBuildForegroundService"
+            android:foregroundServiceType="dataSync"
+            android:exported="false"
+            android:stopWithTask="false" />
+
+        <!-- ============================================================ -->
+        <!-- FileProvider                                                 -->
+        <!-- ============================================================ -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- ============================================================ -->
+        <!-- ⭐ شاشة البداية (SplashActivity) — نقطة الدخول الجديدة       -->
+        <!-- ============================================================ -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ============================================================ -->
+        <!-- شاشة الدخول — لم تعد LAUNCHER، لكنها تستقبل Deep Link        -->
+        <!-- ============================================================ -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="flutteride" android:host="auth" />
+            </intent-filter>
+        </activity>
+
+        <!-- ============================================================ -->
+        <!-- الشاشة الرئيسية                                              -->
+        <!-- ============================================================ -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+        <!-- ============================================================ -->
+        <!-- الإعدادات                                                    -->
+        <!-- ============================================================ -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="الإعدادات"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- ============================================================ -->
+        <!-- القوالب                                                      -->
+        <!-- ============================================================ -->
+        <activity
+            android:name=".TemplateStoreActivity"
+            android:exported="false"
+            android:label="القوالب" />
+
+        <activity
+            android:name=".TemplateDetailActivity"
+            android:exported="false"
+            android:label="تفاصيل القالب" />
+
+        <activity
+            android:name=".ImagePreviewActivity"
+            android:exported="false"
+            android:label="معاينة"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <!-- ============================================================ -->
+        <!-- AI                                                           -->
+        <!-- ============================================================ -->
+        <activity
+            android:name=".AiSettingsActivity"
+            android:exported="false"
+            android:label="إعدادات AI" />
+
+        <activity
+            android:name=".AiChatActivity"
+            android:exported="false"
+            android:label="مساعد AI" />
+
+        <!-- ============================================================ -->
+        <!-- التطبيقات المبنية                                            -->
+        <!-- ============================================================ -->
+        <activity
+            android:name=".BuiltAppsActivity"
+            android:exported="false"
+            android:label="مكتبة التطبيقات" />
+
+        <!-- ============================================================ -->
+        <!-- مدير الملفات                                                 -->
+        <!-- ============================================================ -->
+        <activity
+            android:name=".FileManagerActivity"
+            android:exported="false"
+            android:label="مدير الملفات" />
+
+        <!-- ============================================================ -->
+        <!-- WebView للتحقق                                               -->
+        <!-- ============================================================ -->
+        <activity
+            android:name=".WebViewAuthActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+    </application>
+</manifest>

@@ -1,0 +1,473 @@
+{
+  "version": 1,
+  "imports": [
+    {
+      "path": "package:flutter/material.dart",
+      "description": "Material Design widgets",
+      "category": "flutter",
+      "priority": 10
+    },
+    {
+      "path": "package:flutter/widgets.dart",
+      "description": "Flutter widgets الأساسية",
+      "category": "flutter",
+      "priority": 9
+    },
+    {
+      "path": "package:flutter/cupertino.dart",
+      "description": "iOS-style widgets",
+      "category": "flutter",
+      "priority": 8
+    },
+    {
+      "path": "package:flutter/services.dart",
+      "description": "خدمات المنصة (Clipboard، Haptic)",
+      "category": "flutter",
+      "priority": 8
+    },
+    {
+      "path": "package:flutter/foundation.dart",
+      "description": "أساسيات (ChangeNotifier، kDebugMode)",
+      "category": "flutter",
+      "priority": 7
+    },
+    {
+      "path": "package:flutter/rendering.dart",
+      "description": "Rendering layer",
+      "category": "flutter",
+      "priority": 6
+    },
+    {
+      "path": "package:flutter/animation.dart",
+      "description": "الرسوم المتحركة",
+      "category": "flutter",
+      "priority": 7
+    },
+    {
+      "path": "package:flutter/painting.dart",
+      "description": "الرسم",
+      "category": "flutter",
+      "priority": 6
+    },
+    {
+      "path": "package:flutter/gestures.dart",
+      "description": "إيماءات اللمس",
+      "category": "flutter",
+      "priority": 5
+    },
+    {
+      "path": "package:flutter/scheduler.dart",
+      "description": "جدولة المهام",
+      "category": "flutter",
+      "priority": 4
+    },
+    {
+      "path": "dart:async",
+      "description": "Future, Stream, Timer",
+      "category": "dart",
+      "priority": 10
+    },
+    {
+      "path": "dart:convert",
+      "description": "JSON, UTF-8",
+      "category": "dart",
+      "priority": 10
+    },
+    {
+      "path": "dart:math",
+      "description": "sin, cos, Random",
+      "category": "dart",
+      "priority": 9
+    },
+    {
+      "path": "dart:io",
+      "description": "File, HttpClient, Process",
+      "category": "dart",
+      "priority": 8
+    },
+    {
+      "path": "dart:collection",
+      "description": "LinkedHashMap, Queue",
+      "category": "dart",
+      "priority": 5
+    },
+    {
+      "path": "dart:typed_data",
+      "description": "Uint8List, ByteData",
+      "category": "dart",
+      "priority": 5
+    },
+    {
+      "path": "dart:core",
+      "description": "أساسيات Dart",
+      "category": "dart",
+      "priority": 4
+    },
+    {
+      "path": "dart:isolate",
+      "description": "Isolate, SendPort",
+      "category": "dart",
+      "priority": 3
+    },
+    {
+      "path": "dart:developer",
+      "description": "log, debugger",
+      "category": "dart",
+      "priority": 4
+    },
+    {
+      "path": "dart:ffi",
+      "description": "Foreign Function Interface",
+      "category": "dart",
+      "priority": 3
+    },
+    {
+      "path": "package:http/http.dart",
+      "description": "طلبات HTTP",
+      "category": "package",
+      "priority": 9
+    },
+    {
+      "path": "package:http/http.dart as http",
+      "description": "طلبات HTTP مع prefix",
+      "category": "package",
+      "priority": 8
+    },
+    {
+      "path": "package:dio/dio.dart",
+      "description": "Dio - HTTP متقدم",
+      "category": "package",
+      "priority": 8
+    },
+    {
+      "path": "package:shared_preferences/shared_preferences.dart",
+      "description": "تخزين بسيط",
+      "category": "package",
+      "priority": 9
+    },
+    {
+      "path": "package:path_provider/path_provider.dart",
+      "description": "مسارات الملفات",
+      "category": "package",
+      "priority": 8
+    },
+    {
+      "path": "package:provider/provider.dart",
+      "description": "إدارة الحالة - Provider",
+      "category": "package",
+      "priority": 8
+    },
+    {
+      "path": "package:riverpod/riverpod.dart",
+      "description": "Riverpod - إدارة حالة",
+      "category": "package",
+      "priority": 7
+    },
+    {
+      "path": "package:flutter_riverpod/flutter_riverpod.dart",
+      "description": "Riverpod لـ Flutter",
+      "category": "package",
+      "priority": 7
+    },
+    {
+      "path": "package:bloc/bloc.dart",
+      "description": "BLoC pattern",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:flutter_bloc/flutter_bloc.dart",
+      "description": "BLoC لـ Flutter",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:get/get.dart",
+      "description": "GetX - إدارة شاملة",
+      "category": "package",
+      "priority": 7
+    },
+    {
+      "path": "package:sqflite/sqflite.dart",
+      "description": "قاعدة بيانات SQLite",
+      "category": "package",
+      "priority": 7
+    },
+    {
+      "path": "package:hive/hive.dart",
+      "description": "Hive - قاعدة بيانات خفيفة",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:firebase_core/firebase_core.dart",
+      "description": "Firebase Core",
+      "category": "package",
+      "priority": 7
+    },
+    {
+      "path": "package:firebase_auth/firebase_auth.dart",
+      "description": "Firebase Auth",
+      "category": "package",
+      "priority": 7
+    },
+    {
+      "path": "package:cloud_firestore/cloud_firestore.dart",
+      "description": "Firestore Database",
+      "category": "package",
+      "priority": 7
+    },
+    {
+      "path": "package:google_fonts/google_fonts.dart",
+      "description": "خطوط Google",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:cached_network_image/cached_network_image.dart",
+      "description": "صور من الإنترنت مع cache",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:url_launcher/url_launcher.dart",
+      "description": "فتح الروابط",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:image_picker/image_picker.dart",
+      "description": "اختيار صور",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:geolocator/geolocator.dart",
+      "description": "الموقع الجغرافي",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:flutter_local_notifications/flutter_local_notifications.dart",
+      "description": "إشعارات محلية",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:connectivity_plus/connectivity_plus.dart",
+      "description": "حالة الشبكة",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:permission_handler/permission_handler.dart",
+      "description": "إدارة الأذونات",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:flutter_svg/flutter_svg.dart",
+      "description": "SVG images",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:share_plus/share_plus.dart",
+      "description": "مشاركة المحتوى",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:video_player/video_player.dart",
+      "description": "تشغيل الفيديو",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:audioplayers/audioplayers.dart",
+      "description": "تشغيل الصوت",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:pdf/pdf.dart",
+      "description": "إنشاء PDF",
+      "category": "package",
+      "priority": 4
+    },
+    {
+      "path": "package:printing/printing.dart",
+      "description": "طباعة",
+      "category": "package",
+      "priority": 4
+    },
+    {
+      "path": "package:intl/intl.dart",
+      "description": "تنسيق التواريخ والأرقام",
+      "category": "package",
+      "priority": 7
+    },
+    {
+      "path": "package:flutter_screenutil/flutter_screenutil.dart",
+      "description": "تصميم متجاوب",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:flutter_spinkit/flutter_spinkit.dart",
+      "description": "مؤشرات تحميل جاهزة",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:shimmer/shimmer.dart",
+      "description": "تأثير Shimmer",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:lottie/lottie.dart",
+      "description": "رسوم متحركة Lottie",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:animations/animations.dart",
+      "description": "رسوم متحركة جاهزة",
+      "category": "package",
+      "priority": 4
+    },
+    {
+      "path": "package:auto_route/auto_route.dart",
+      "description": "تنقل متقدم",
+      "category": "package",
+      "priority": 4
+    },
+    {
+      "path": "package:go_router/go_router.dart",
+      "description": "GoRouter",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:freezed_annotation/freezed_annotation.dart",
+      "description": "Data classes",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:json_annotation/json_annotation.dart",
+      "description": "JSON serialization",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:equatable/equatable.dart",
+      "description": "Equality helpers",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:flutter_hooks/flutter_hooks.dart",
+      "description": "React-style hooks",
+      "category": "package",
+      "priority": 3
+    },
+    {
+      "path": "package:flutter_secure_storage/flutter_secure_storage.dart",
+      "description": "تخزين آمن",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:local_auth/local_auth.dart",
+      "description": "البصمة والتحقق",
+      "category": "package",
+      "priority": 4
+    },
+    {
+      "path": "package:camera/camera.dart",
+      "description": "الكاميرا",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:qr_flutter/qr_flutter.dart",
+      "description": "رموز QR",
+      "category": "package",
+      "priority": 4
+    },
+    {
+      "path": "package:mobile_scanner/mobile_scanner.dart",
+      "description": "قارئ QR",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:flutter_map/flutter_map.dart",
+      "description": "خرائط",
+      "category": "package",
+      "priority": 4
+    },
+    {
+      "path": "package:google_maps_flutter/google_maps_flutter.dart",
+      "description": "خرائط Google",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:table_calendar/table_calendar.dart",
+      "description": "تقويم",
+      "category": "package",
+      "priority": 4
+    },
+    {
+      "path": "package:webview_flutter/webview_flutter.dart",
+      "description": "WebView",
+      "category": "package",
+      "priority": 6
+    },
+    {
+      "path": "package:path/path.dart",
+      "description": "التعامل مع المسارات",
+      "category": "package",
+      "priority": 7
+    },
+    {
+      "path": "package:collection/collection.dart",
+      "description": "أدوات للمجموعات",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:async/async.dart",
+      "description": "أدوات Async",
+      "category": "package",
+      "priority": 5
+    },
+    {
+      "path": "package:clock/clock.dart",
+      "description": "ساعة قابلة للاختبار",
+      "category": "package",
+      "priority": 3
+    },
+    {
+      "path": "package:flutter_test/flutter_test.dart",
+      "description": "اختبارات Flutter",
+      "category": "test",
+      "priority": 7
+    },
+    {
+      "path": "package:mockito/mockito.dart",
+      "description": "Mock objects",
+      "category": "test",
+      "priority": 5
+    },
+    {
+      "path": "package:integration_test/integration_test.dart",
+      "description": "اختبارات التكامل",
+      "category": "test",
+      "priority": 3
+    }
+  ]
+}

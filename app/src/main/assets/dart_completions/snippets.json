@@ -1,0 +1,292 @@
+{
+  "version": 1,
+  "snippets": [
+    {
+      "prefix": "stless",
+      "name": "StatelessWidget",
+      "description": "Widget بدون حالة",
+      "category": "class",
+      "body": "class MyWidget extends StatelessWidget {\n  const MyWidget({super.key});\n\n  @override\n  Widget build(BuildContext context) {\n    return Container();\n  }\n}"
+    },
+    {
+      "prefix": "stful",
+      "name": "StatefulWidget",
+      "description": "Widget مع حالة",
+      "category": "class",
+      "body": "class MyWidget extends StatefulWidget {\n  const MyWidget({super.key});\n\n  @override\n  State<MyWidget> createState() => _MyWidgetState();\n}\n\nclass _MyWidgetState extends State<MyWidget> {\n  @override\n  Widget build(BuildContext context) {\n    return Container();\n  }\n}"
+    },
+    {
+      "prefix": "main",
+      "name": "main",
+      "description": "نقطة البداية",
+      "category": "entry",
+      "body": "void main() {\n  runApp(const MyApp());\n}"
+    },
+    {
+      "prefix": "mapp",
+      "name": "MaterialApp",
+      "description": "تطبيق Material",
+      "category": "app",
+      "body": "MaterialApp(\n  title: 'My App',\n  theme: ThemeData(\n    primarySwatch: Colors.blue,\n  ),\n  home: const MyHomePage(),\n)"
+    },
+    {
+      "prefix": "scaff",
+      "name": "Scaffold",
+      "description": "هيكل الصفحة",
+      "category": "layout",
+      "body": "Scaffold(\n  appBar: AppBar(\n    title: const Text('Title'),\n  ),\n  body: Container(),\n)"
+    },
+    {
+      "prefix": "col",
+      "name": "Column",
+      "description": "ترتيب عمودي",
+      "category": "layout",
+      "body": "Column(\n  crossAxisAlignment: CrossAxisAlignment.start,\n  children: const [\n    // TODO: add children\n  ],\n)"
+    },
+    {
+      "prefix": "row",
+      "name": "Row",
+      "description": "ترتيب أفقي",
+      "category": "layout",
+      "body": "Row(\n  mainAxisAlignment: MainAxisAlignment.start,\n  children: const [\n    // TODO: add children\n  ],\n)"
+    },
+    {
+      "prefix": "cont",
+      "name": "Container",
+      "description": "حاوية مرنة",
+      "category": "layout",
+      "body": "Container(\n  padding: const EdgeInsets.all(8.0),\n  child: const Text(''),\n)"
+    },
+    {
+      "prefix": "pad",
+      "name": "Padding",
+      "description": "إضافة حشوة",
+      "category": "layout",
+      "body": "Padding(\n  padding: const EdgeInsets.all(8.0),\n  child: const SizedBox(),\n)"
+    },
+    {
+      "prefix": "cent",
+      "name": "Center",
+      "description": "توسيط",
+      "category": "layout",
+      "body": "Center(\n  child: const SizedBox(),\n)"
+    },
+    {
+      "prefix": "sbh",
+      "name": "SizedBox height",
+      "description": "مسافة أفقية",
+      "category": "layout",
+      "body": "const SizedBox(height: 16.0)"
+    },
+    {
+      "prefix": "sbw",
+      "name": "SizedBox width",
+      "description": "مسافة عمودية",
+      "category": "layout",
+      "body": "const SizedBox(width: 16.0)"
+    },
+    {
+      "prefix": "exp",
+      "name": "Expanded",
+      "description": "تمديد في Flex",
+      "category": "layout",
+      "body": "Expanded(\n  child: Container(),\n)"
+    },
+    {
+      "prefix": "stack",
+      "name": "Stack",
+      "description": "ترتيب متراكب",
+      "category": "layout",
+      "body": "Stack(\n  children: const [\n    // TODO: add children\n  ],\n)"
+    },
+    {
+      "prefix": "align",
+      "name": "Align",
+      "description": "محاذاة",
+      "category": "layout",
+      "body": "Align(\n  alignment: Alignment.center,\n  child: const SizedBox(),\n)"
+    },
+    {
+      "prefix": "wrap",
+      "name": "Wrap",
+      "description": "التفاف تلقائي",
+      "category": "layout",
+      "body": "Wrap(\n  spacing: 8.0,\n  runSpacing: 4.0,\n  children: const [\n    // TODO: add children\n  ],\n)"
+    },
+    {
+      "prefix": "text",
+      "name": "Text",
+      "description": "عرض نص",
+      "category": "material",
+      "body": "const Text(\n  'Hello',\n  style: TextStyle(\n    fontSize: 16.0,\n    color: Colors.black,\n  ),\n)"
+    },
+    {
+      "prefix": "textf",
+      "name": "TextField",
+      "description": "حقل إدخال",
+      "category": "material",
+      "body": "TextField(\n  controller: TextEditingController(),\n  decoration: const InputDecoration(\n    hintText: 'Enter text',\n    border: OutlineInputBorder(),\n  ),\n)"
+    },
+    {
+      "prefix": "card",
+      "name": "Card",
+      "description": "بطاقة",
+      "category": "material",
+      "body": "Card(\n  elevation: 4.0,\n  child: Padding(\n    padding: const EdgeInsets.all(16.0),\n    child: const Text(''),\n  ),\n)"
+    },
+    {
+      "prefix": "btn",
+      "name": "ElevatedButton",
+      "description": "زر",
+      "category": "material",
+      "body": "ElevatedButton(\n  onPressed: () {\n    // TODO\n  },\n  child: const Text('Button'),\n)"
+    },
+    {
+      "prefix": "tbtn",
+      "name": "TextButton",
+      "description": "زر نصي",
+      "category": "material",
+      "body": "TextButton(\n  onPressed: () {\n    // TODO\n  },\n  child: const Text('Button'),\n)"
+    },
+    {
+      "prefix": "icbtn",
+      "name": "IconButton",
+      "description": "زر أيقونة",
+      "category": "material",
+      "body": "IconButton(\n  icon: const Icon(Icons.add),\n  onPressed: () {\n    // TODO\n  },\n)"
+    },
+    {
+      "prefix": "icon",
+      "name": "Icon",
+      "description": "أيقونة",
+      "category": "material",
+      "body": "const Icon(\n  Icons.home,\n  size: 24.0,\n  color: Colors.black,\n)"
+    },
+    {
+      "prefix": "img",
+      "name": "Image.network",
+      "description": "صورة من الإنترنت",
+      "category": "material",
+      "body": "Image.network(\n  'https://example.com/image.png',\n  width: 100.0,\n  height: 100.0,\n  fit: BoxFit.cover,\n)"
+    },
+    {
+      "prefix": "appbar",
+      "name": "AppBar",
+      "description": "شريط التطبيق",
+      "category": "material",
+      "body": "AppBar(\n  title: const Text('Title'),\n  actions: const [\n    Icon(Icons.search),\n  ],\n)"
+    },
+    {
+      "prefix": "listv",
+      "name": "ListView",
+      "description": "قائمة عمودية",
+      "category": "scroll",
+      "body": "ListView(\n  children: const [\n    ListTile(title: Text('Item 1')),\n    ListTile(title: Text('Item 2')),\n  ],\n)"
+    },
+    {
+      "prefix": "listvb",
+      "name": "ListView.builder",
+      "description": "قائمة ديناميكية",
+      "category": "scroll",
+      "body": "ListView.builder(\n  itemCount: items.length,\n  itemBuilder: (context, index) {\n    return ListTile(\n      title: Text(items[index].toString()),\n    );\n  },\n)"
+    },
+    {
+      "prefix": "gridv",
+      "name": "GridView",
+      "description": "شبكة",
+      "category": "scroll",
+      "body": "GridView.count(\n  crossAxisCount: 2,\n  children: const [\n    // TODO: add items\n  ],\n)"
+    },
+    {
+      "prefix": "scrv",
+      "name": "SingleChildScrollView",
+      "description": "تمرير بسيط",
+      "category": "scroll",
+      "body": "SingleChildScrollView(\n  child: Column(\n    children: const [\n      // TODO: add children\n    ],\n  ),\n)"
+    },
+    {
+      "prefix": "futb",
+      "name": "FutureBuilder",
+      "description": "بناء غير متزامن",
+      "category": "async",
+      "body": "FutureBuilder<dynamic>(\n  future: _loadData(),\n  builder: (context, snapshot) {\n    if (snapshot.connectionState == ConnectionState.waiting) {\n      return const CircularProgressIndicator();\n    }\n    if (snapshot.hasError) {\n      return Text('Error: ${snapshot.error}');\n    }\n    return Text('Data: ${snapshot.data}');\n  },\n)"
+    },
+    {
+      "prefix": "streamb",
+      "name": "StreamBuilder",
+      "description": "بناء من Stream",
+      "category": "async",
+      "body": "StreamBuilder<dynamic>(\n  stream: _stream,\n  builder: (context, snapshot) {\n    if (!snapshot.hasData) {\n      return const CircularProgressIndicator();\n    }\n    return Text('Data: ${snapshot.data}');\n  },\n)"
+    },
+    {
+      "prefix": "nav",
+      "name": "Navigator.push",
+      "description": "انتقال لصفحة",
+      "category": "navigation",
+      "body": "Navigator.push(\n  context,\n  MaterialPageRoute(builder: (context) => const SecondPage()),\n);"
+    },
+    {
+      "prefix": "dlg",
+      "name": "showDialog",
+      "description": "حوار",
+      "category": "navigation",
+      "body": "showDialog(\n  context: context,\n  builder: (context) => AlertDialog(\n    title: const Text('Title'),\n    content: const Text('Message'),\n    actions: [\n      TextButton(\n        onPressed: () => Navigator.pop(context),\n        child: const Text('OK'),\n      ),\n    ],\n  ),\n);"
+    },
+    {
+      "prefix": "snack",
+      "name": "SnackBar",
+      "description": "رسالة سفلية",
+      "category": "navigation",
+      "body": "ScaffoldMessenger.of(context).showSnackBar(\n  const SnackBar(\n    content: Text('Message'),\n    duration: Duration(seconds: 2),\n  ),\n);"
+    },
+    {
+      "prefix": "setst",
+      "name": "setState",
+      "description": "تحديث الحالة",
+      "category": "state",
+      "body": "setState(() {\n  // TODO: update state\n});"
+    },
+    {
+      "prefix": "init",
+      "name": "initState",
+      "description": "تهيئة الـ State",
+      "category": "state",
+      "body": "@override\nvoid initState() {\n  super.initState();\n  // TODO: init\n}"
+    },
+    {
+      "prefix": "disp",
+      "name": "dispose",
+      "description": "تنظيف",
+      "category": "state",
+      "body": "@override\nvoid dispose() {\n  // TODO: dispose controllers\n  super.dispose();\n}"
+    },
+    {
+      "prefix": "tryc",
+      "name": "try-catch",
+      "description": "معالجة الأخطاء",
+      "category": "control",
+      "body": "try {\n  // TODO: code\n} catch (e) {\n  print('Error: $e');\n}"
+    },
+    {
+      "prefix": "ife",
+      "name": "if-else",
+      "description": "شرط",
+      "category": "control",
+      "body": "if (condition) {\n  // TODO: true\n} else {\n  // TODO: false\n}"
+    },
+    {
+      "prefix": "forl",
+      "name": "for loop",
+      "description": "حلقة",
+      "category": "control",
+      "body": "for (var i = 0; i < 10; i++) {\n  // TODO\n}"
+    },
+    {
+      "prefix": "foreach",
+      "name": "for-in",
+      "description": "تكرار على قائمة",
+      "category": "control",
+      "body": "for (final item in items) {\n  // TODO\n}"
+    }
+  ]
+}

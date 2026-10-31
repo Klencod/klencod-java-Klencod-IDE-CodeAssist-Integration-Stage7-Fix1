@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "methods": [
+    // ══════════════════════════════════════════════════════════
+    // دوال Flutter الأساسية (top-level)
+    // ══════════════════════════════════════════════════════════
+    { "name": "runApp", "signature": "runApp(Widget app)", "description": "تشغيل التطبيق", "return": "void", "category": "flutter", "class": "top-level" },
+    { "name": "showDialog", "signature": "showDialog({required BuildContext context, required WidgetBuilder builder})", "description": "عرض حوار", "return": "Future<T?>", "category": "material", "class": "top-level" },
+    { "name": "showModalBottomSheet", "signature": "showModalBottomSheet({required BuildContext context, required WidgetBuilder builder})", "description": "عرض ورقة سفلية", "return": "Future<T?>", "category": "material", "class": "top-level" },
+    { "name": "showDatePicker", "signature": "showDatePicker({required BuildContext context, required DateTime initialDate, required DateTime firstDate, required DateTime lastDate})", "description": "منتقي التاريخ", "return": "Future<DateTime?>", "category": "material", "class": "top-level" },
+    { "name": "showTimePicker", "signature": "showTimePicker({required BuildContext context, required TimeOfDay initialTime})", "description": "منتقي الوقت", "return": "Future<TimeOfDay?>", "category": "material", "class": "top-level" },
+    { "name": "showDateRangePicker", "signature": "showDateRangePicker({required BuildContext context, required DateTime firstDate, required DateTime lastDate})", "description": "منتقي النطاق الزمني", "return": "Future<DateTimeRange?>", "category": "material", "class": "top-level" },
+    { "name": "showAboutDialog", "signature": "showAboutDialog({required BuildContext context})", "description": "حوار \"حول\"", "return": "void", "category": "material", "class": "top-level" },
+    { "name": "showLicensePage", "signature": "showLicensePage({required BuildContext context})", "description": "صفحة التراخيص", "return": "void", "category": "material", "class": "top-level" },
+    { "name": "showGeneralDialog", "signature": "showGeneralDialog({required BuildContext context, required RoutePageBuilder pageBuilder})", "description": "حوار عام", "return": "Future<T?>", "category": "widgets", "class": "top-level" },
+    { "name": "showSnackBar", "signature": "showSnackBar(SnackBar snackBar)", "description": "عرض رسالة سفلية", "return": "void", "category": "material", "class": "ScaffoldMessenger" },
+    { "name": "showBottomSheet", "signature": "showBottomSheet({required WidgetBuilder builder})", "description": "عرض ورقة سفلية ثابتة", "return": "PersistentBottomSheetController", "category": "material", "class": "ScaffoldState" },
+    { "name": "of", "signature": "of(BuildContext context)", "description": "الحصول على من السياق", "return": "T", "category": "flutter", "class": "general" },
+    { "name": "maybeOf", "signature": "maybeOf(BuildContext context)", "description": "الحصول على من السياق (اختياري)", "return": "T?", "category": "flutter", "class": "general" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال State (داخل StatefulWidget)
+    // ══════════════════════════════════════════════════════════
+    { "name": "setState", "signature": "setState(VoidCallback fn)", "description": "تحديث الحالة", "return": "void", "category": "flutter", "class": "State" },
+    { "name": "initState", "signature": "initState()", "description": "تهيئة الحالة", "return": "void", "category": "flutter", "class": "State" },
+    { "name": "dispose", "signature": "dispose()", "description": "تنظيف الموارد", "return": "void", "category": "flutter", "class": "State" },
+    { "name": "didChangeDependencies", "signature": "didChangeDependencies()", "description": "عند تغيير الاعتماديات", "return": "void", "category": "flutter", "class": "State" },
+    { "name": "didUpdateWidget", "signature": "didUpdateWidget(covariant StatefulWidget oldWidget)", "description": "عند تحديث الـ Widget", "return": "void", "category": "flutter", "class": "State" },
+    { "name": "build", "signature": "build(BuildContext context)", "description": "بناء الواجهة", "return": "Widget", "category": "flutter", "class": "State" },
+    { "name": "deactivate", "signature": "deactivate()", "description": "عند إزالة الـ Widget", "return": "void", "category": "flutter", "class": "State" },
+    { "name": "activate", "signature": "activate()", "description": "عند إعادة إضافة الـ Widget", "return": "void", "category": "flutter", "class": "State" },
+    { "name": "reassemble", "signature": "reassemble()", "description": "عند إعادة التحميل السريع", "return": "void", "category": "flutter", "class": "State" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال BuildContext
+    // ══════════════════════════════════════════════════════════
+    { "name": "findAncestorStateOfType", "signature": "findAncestorStateOfType<T extends State>()", "description": "البحث عن State في الشجرة", "return": "T?", "category": "flutter", "class": "BuildContext" },
+    { "name": "findAncestorWidgetOfExactType", "signature": "findAncestorWidgetOfExactType<T extends Widget>()", "description": "البحث عن Widget في الشجرة", "return": "T?", "category": "flutter", "class": "BuildContext" },
+    { "name": "findRenderObject", "signature": "findRenderObject()", "description": "الحصول على RenderObject", "return": "RenderObject?", "category": "flutter", "class": "BuildContext" },
+    { "name": "dependOnInheritedWidgetOfExactType", "signature": "dependOnInheritedWidgetOfExactType<T extends InheritedWidget>()", "description": "الحصول على InheritedWidget", "return": "T?", "category": "flutter", "class": "BuildContext" },
+    { "name": "size", "signature": "size", "description": "حجم RenderObject", "return": "Size?", "category": "flutter", "class": "BuildContext" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال Navigator
+    // ══════════════════════════════════════════════════════════
+    { "name": "push", "signature": "push<T>(Route<T> route)", "description": "دفع صفحة جديدة", "return": "Future<T?>", "category": "flutter", "class": "Navigator" },
+    { "name": "pop", "signature": "pop<T>([T? result])", "description": "إرجاع للصفحة السابقة", "return": "void", "category": "flutter", "class": "Navigator" },
+    { "name": "pushReplacement", "signature": "pushReplacement<T, TO>(Route<T> newRoute)", "description": "استبدال الصفحة الحالية", "return": "Future<T?>", "category": "flutter", "class": "Navigator" },
+    { "name": "pushAndRemoveUntil", "signature": "pushAndRemoveUntil<T>(Route<T> newRoute, RoutePredicate predicate)", "description": "دفع مع حذف السجل", "return": "Future<T?>", "category": "flutter", "class": "Navigator" },
+    { "name": "popUntil", "signature": "popUntil(RoutePredicate predicate)", "description": "الرجوع حتى شرط", "return": "void", "category": "flutter", "class": "Navigator" },
+    { "name": "maybePop", "signature": "maybePop<T>([T? result])", "description": "محاولة الرجوع", "return": "Future<bool>", "category": "flutter", "class": "Navigator" },
+    { "name": "canPop", "signature": "canPop()", "description": "هل يمكن الرجوع", "return": "bool", "category": "flutter", "class": "Navigator" },
+    { "name": "of", "signature": "of(BuildContext context)", "description": "الحصول على Navigator", "return": "NavigatorState", "category": "flutter", "class": "Navigator" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال MediaQuery
+    // ══════════════════════════════════════════════════════════
+    { "name": "of", "signature": "of(BuildContext context)", "description": "بيانات الشاشة", "return": "MediaQueryData", "category": "flutter", "class": "MediaQuery" },
+    { "name": "sizeOf", "signature": "sizeOf(BuildContext context)", "description": "حجم الشاشة", "return": "Size", "category": "flutter", "class": "MediaQuery" },
+    { "name": "paddingOf", "signature": "paddingOf(BuildContext context)", "description": "حشوة النظام", "return": "EdgeInsets", "category": "flutter", "class": "MediaQuery" },
+    { "name": "viewInsetsOf", "signature": "viewInsetsOf(BuildContext context)", "description": "إزاحات لوحة المفاتيح", "return": "EdgeInsets", "category": "flutter", "class": "MediaQuery" },
+    { "name": "viewPaddingOf", "signature": "viewPaddingOf(BuildContext context)", "description": "حشوة النظام الثابتة", "return": "EdgeInsets", "category": "flutter", "class": "MediaQuery" },
+    { "name": "platformBrightnessOf", "signature": "platformBrightnessOf(BuildContext context)", "description": "سطوع النظام", "return": "Brightness", "category": "flutter", "class": "MediaQuery" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال Theme
+    // ══════════════════════════════════════════════════════════
+    { "name": "of", "signature": "of(BuildContext context)", "description": "مظهر التطبيق", "return": "ThemeData", "category": "material", "class": "Theme" },
+    { "name": "textTheme", "signature": "textTheme", "description": "نمط النصوص", "return": "TextTheme", "category": "material", "class": "ThemeData" },
+    { "name": "colorScheme", "signature": "colorScheme", "description": "نظام الألوان", "return": "ColorScheme", "category": "material", "class": "ThemeData" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال Scaffold
+    // ══════════════════════════════════════════════════════════
+    { "name": "of", "signature": "of(BuildContext context)", "description": "الحصول على ScaffoldState", "return": "ScaffoldState", "category": "material", "class": "Scaffold" },
+    { "name": "showSnackBar", "signature": "showSnackBar(SnackBar snackBar)", "description": "عرض SnackBar", "return": "void", "category": "material", "class": "ScaffoldMessengerState" },
+    { "name": "hideCurrentSnackBar", "signature": "hideCurrentSnackBar()", "description": "إخفاء SnackBar الحالي", "return": "void", "category": "material", "class": "ScaffoldMessengerState" },
+    { "name": "removeCurrentSnackBar", "signature": "removeCurrentSnackBar()", "description": "إزالة SnackBar الحالي", "return": "void", "category": "material", "class": "ScaffoldMessengerState" },
+    { "name": "clearSnackBars", "signature": "clearSnackBars()", "description": "مسح كل SnackBars", "return": "void", "category": "material", "class": "ScaffoldMessengerState" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال AnimationController
+    // ══════════════════════════════════════════════════════════
+    { "name": "forward", "signature": "forward({double? from})", "description": "تشغيل الحركة للأمام", "return": "TickerFuture", "category": "animation", "class": "AnimationController" },
+    { "name": "reverse", "signature": "reverse({double? from})", "description": "تشغيل الحركة للخلف", "return": "TickerFuture", "category": "animation", "class": "AnimationController" },
+    { "name": "reset", "signature": "reset()", "description": "إعادة للبداية", "return": "void", "category": "animation", "class": "AnimationController" },
+    { "name": "stop", "signature": "stop({bool canceled = true})", "description": "إيقاف الحركة", "return": "void", "category": "animation", "class": "AnimationController" },
+    { "name": "repeat", "signature": "repeat({double? min, double? max, bool reverse = false, Duration? period})", "description": "تكرار الحركة", "return": "TickerFuture", "category": "animation", "class": "AnimationController" },
+    { "name": "animateTo", "signature": "animateTo(double target, {Duration? duration, Curve curve = Curves.linear})", "description": "تحريك إلى قيمة", "return": "TickerFuture", "category": "animation", "class": "AnimationController" },
+    { "name": "animateBack", "signature": "animateBack(double target, {Duration? duration, Curve curve = Curves.linear})", "description": "تحريك للخلف إلى قيمة", "return": "TickerFuture", "category": "animation", "class": "AnimationController" },
+    { "name": "fling", "signature": "fling({double velocity = 1.0, SpringDescription? springDescription})", "description": "دفع بحركة سريعة", "return": "TickerFuture", "category": "animation", "class": "AnimationController" },
+    { "name": "dispose", "signature": "dispose()", "description": "تنظيف", "return": "void", "category": "animation", "class": "AnimationController" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال ChangeNotifier
+    // ══════════════════════════════════════════════════════════
+    { "name": "notifyListeners", "signature": "notifyListeners()", "description": "إشعار المستمعين", "return": "void", "category": "foundation", "class": "ChangeNotifier" },
+    { "name": "addListener", "signature": "addListener(VoidCallback listener)", "description": "إضافة مستمع", "return": "void", "category": "foundation", "class": "ChangeNotifier" },
+    { "name": "removeListener", "signature": "removeListener(VoidCallback listener)", "description": "إزالة مستمع", "return": "void", "category": "foundation", "class": "ChangeNotifier" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال TextEditingController
+    // ══════════════════════════════════════════════════════════
+    { "name": "clear", "signature": "clear()", "description": "مسح النص", "return": "void", "category": "widgets", "class": "TextEditingController" },
+    { "name": "text", "signature": "text", "description": "النص الحالي", "return": "String", "category": "widgets", "class": "TextEditingController" },
+    { "name": "selection", "signature": "selection", "description": "التحديد الحالي", "return": "TextSelection", "category": "widgets", "class": "TextEditingController" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال ScrollController
+    // ══════════════════════════════════════════════════════════
+    { "name": "animateTo", "signature": "animateTo(double offset, {required Duration duration, Curve curve = Curves.ease})", "description": "تمرير متحرك", "return": "Future<void>", "category": "widgets", "class": "ScrollController" },
+    { "name": "jumpTo", "signature": "jumpTo(double value)", "description": "تمرير فوري", "return": "void", "category": "widgets", "class": "ScrollController" },
+    { "name": "position", "signature": "position", "description": "موقع التمرير", "return": "ScrollPosition", "category": "widgets", "class": "ScrollController" },
+    { "name": "offset", "signature": "offset", "description": "الإزاحة الحالية", "return": "double", "category": "widgets", "class": "ScrollController" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال Dart الأساسية
+    // ══════════════════════════════════════════════════════════
+    { "name": "print", "signature": "print(Object? object)", "description": "طباعة في الـ console", "return": "void", "category": "dart", "class": "top-level" },
+    { "name": "debugPrint", "signature": "debugPrint(String? message, {int? wrapWidth})", "description": "طباعة آمنة للمخرجات الطويلة", "return": "void", "category": "foundation", "class": "top-level" },
+    { "name": "assert", "signature": "assert(bool condition, [Object? message])", "description": "تحقق (debug فقط)", "return": "void", "category": "dart", "class": "top-level" },
+    { "name": "identical", "signature": "identical(Object? a, Object? b)", "description": "مقارنة الهوية", "return": "bool", "category": "dart", "class": "top-level" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال String
+    // ══════════════════════════════════════════════════════════
+    { "name": "length", "signature": "length", "description": "طول النص", "return": "int", "category": "core", "class": "String" },
+    { "name": "isEmpty", "signature": "isEmpty", "description": "هل فارغ", "return": "bool", "category": "core", "class": "String" },
+    { "name": "isNotEmpty", "signature": "isNotEmpty", "description": "هل غير فارغ", "return": "bool", "category": "core", "class": "String" },
+    { "name": "toUpperCase", "signature": "toUpperCase()", "description": "تحويل لحروف كبيرة", "return": "String", "category": "core", "class": "String" },
+    { "name": "toLowerCase", "signature": "toLowerCase()", "description": "تحويل لحروف صغيرة", "return": "String", "category": "core", "class": "String" },
+    { "name": "trim", "signature": "trim()", "description": "إزالة الفراغات", "return": "String", "category": "core", "class": "String" },
+    { "name": "trimLeft", "signature": "trimLeft()", "description": "إزالة الفراغات من اليسار", "return": "String", "category": "core", "class": "String" },
+    { "name": "trimRight", "signature": "trimRight()", "description": "إزالة الفراغات من اليمين", "return": "String", "category": "core", "class": "String" },
+    { "name": "contains", "signature": "contains(Pattern other, [int startIndex = 0])", "description": "هل يحتوي على", "return": "bool", "category": "core", "class": "String" },
+    { "name": "startsWith", "signature": "startsWith(Pattern pattern, [int index = 0])", "description": "هل يبدأ بـ", "return": "bool", "category": "core", "class": "String" },
+    { "name": "endsWith", "signature": "endsWith(String other)", "description": "هل ينتهي بـ", "return": "bool", "category": "core", "class": "String" },
+    { "name": "indexOf", "signature": "indexOf(Pattern pattern, [int start = 0])", "description": "موقع أول ظهور", "return": "int", "category": "core", "class": "String" },
+    { "name": "lastIndexOf", "signature": "lastIndexOf(Pattern pattern, [int? start])", "description": "موقع آخر ظهور", "return": "int", "category": "core", "class": "String" },
+    { "name": "substring", "signature": "substring(int start, [int? end])", "description": "جزء من النص", "return": "String", "category": "core", "class": "String" },
+    { "name": "replaceAll", "signature": "replaceAll(Pattern from, String replace)", "description": "استبدال الكل", "return": "String", "category": "core", "class": "String" },
+    { "name": "replaceFirst", "signature": "replaceFirst(Pattern from, String to, [int startIndex = 0])", "description": "استبدال الأول", "return": "String", "category": "core", "class": "String" },
+    { "name": "split", "signature": "split(Pattern pattern)", "description": "تقسيم", "return": "List<String>", "category": "core", "class": "String" },
+    { "name": "splitMapJoin", "signature": "splitMapJoin(Pattern pattern, {String onMatch(Match)?, String onNonMatch(String)?})", "description": "تقسيم مع تحويل", "return": "String", "category": "core", "class": "String" },
+    { "name": "padLeft", "signature": "padLeft(int width, [String padding = ' '])", "description": "إضافة من اليسار", "return": "String", "category": "core", "class": "String" },
+    { "name": "padRight", "signature": "padRight(int width, [String padding = ' '])", "description": "إضافة من اليمين", "return": "String", "category": "core", "class": "String" },
+    { "name": "codeUnitAt", "signature": "codeUnitAt(int index)", "description": "كود الحرف", "return": "int", "category": "core", "class": "String" },
+    { "name": "compareTo", "signature": "compareTo(String other)", "description": "مقارنة", "return": "int", "category": "core", "class": "String" },
+    { "name": "runes", "signature": "runes", "description": "رموز Unicode", "return": "Runes", "category": "core", "class": "String" },
+    { "name": "codeUnits", "signature": "codeUnits", "description": "وحدات الكود", "return": "List<int>", "category": "core", "class": "String" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال List
+    // ══════════════════════════════════════════════════════════
+    { "name": "add", "signature": "add(E element)", "description": "إضافة عنصر", "return": "void", "category": "collection", "class": "List" },
+    { "name": "addAll", "signature": "addAll(Iterable<E> iterable)", "description": "إضافة عدة عناصر", "return": "void", "category": "collection", "class": "List" },
+    { "name": "insert", "signature": "insert(int index, E element)", "description": "إدراج في موقع", "return": "void", "category": "collection", "class": "List" },
+    { "name": "insertAll", "signature": "insertAll(int index, Iterable<E> iterable)", "description": "إدراج عدة", "return": "void", "category": "collection", "class": "List" },
+    { "name": "remove", "signature": "remove(Object? value)", "description": "إزالة عنصر", "return": "bool", "category": "collection", "class": "List" },
+    { "name": "removeAt", "signature": "removeAt(int index)", "description": "إزالة في موقع", "return": "E", "category": "collection", "class": "List" },
+    { "name": "removeLast", "signature": "removeLast()", "description": "إزالة الأخير", "return": "E", "category": "collection", "class": "List" },
+    { "name": "removeWhere", "signature": "removeWhere(bool test(E element))", "description": "إزالة حسب شرط", "return": "void", "category": "collection", "class": "List" },
+    { "name": "clear", "signature": "clear()", "description": "مسح كل العناصر", "return": "void", "category": "collection", "class": "List" },
+    { "name": "indexOf", "signature": "indexOf(E element, [int start = 0])", "description": "موقع العنصر", "return": "int", "category": "collection", "class": "List" },
+    { "name": "contains", "signature": "contains(Object? element)", "description": "هل يحتوي", "return": "bool", "category": "collection", "class": "List" },
+    { "name": "first", "signature": "first", "description": "أول عنصر", "return": "E", "category": "collection", "class": "List" },
+    { "name": "last", "signature": "last", "description": "آخر عنصر", "return": "E", "category": "collection", "class": "List" },
+    { "name": "length", "signature": "length", "description": "الطول", "return": "int", "category": "collection", "class": "List" },
+    { "name": "isEmpty", "signature": "isEmpty", "description": "هل فارغ", "return": "bool", "category": "collection", "class": "List" },
+    { "name": "isNotEmpty", "signature": "isNotEmpty", "description": "هل غير فارغ", "return": "bool", "category": "collection", "class": "List" },
+    { "name": "map", "signature": "map<T>(T f(E e))", "description": "تحويل كل عنصر", "return": "Iterable<T>", "category": "collection", "class": "List" },
+    { "name": "where", "signature": "where(bool test(E element))", "description": "تصفية", "return": "Iterable<E>", "category": "collection", "class": "List" },
+    { "name": "whereType", "signature": "whereType<T>()", "description": "تصفية حسب النوع", "return": "Iterable<T>", "category": "collection", "class": "List" },
+    { "name": "forEach", "signature": "forEach(void f(E element))", "description": "على كل عنصر", "return": "void", "category": "collection", "class": "List" },
+    { "name": "reduce", "signature": "reduce(E combine(E value, E element))", "description": "تقليص لقيمة واحدة", "return": "E", "category": "collection", "class": "List" },
+    { "name": "fold", "signature": "fold<T>(T initialValue, T combine(T previousValue, E element))", "description": "تقليص مع قيمة ابتدائية", "return": "T", "category": "collection", "class": "List" },
+    { "name": "every", "signature": "every(bool test(E element))", "description": "هل كل العناصر", "return": "bool", "category": "collection", "class": "List" },
+    { "name": "any", "signature": "any(bool test(E element))", "description": "هل أي عنصر", "return": "bool", "category": "collection", "class": "List" },
+    { "name": "join", "signature": "join([String separator = ''])", "description": "دمج بنص فاصل", "return": "String", "category": "collection", "class": "List" },
+    { "name": "take", "signature": "take(int count)", "description": "أخذ أول N", "return": "Iterable<E>", "category": "collection", "class": "List" },
+    { "name": "skip", "signature": "skip(int count)", "description": "تخطي N", "return": "Iterable<E>", "category": "collection", "class": "List" },
+    { "name": "toList", "signature": "toList({bool growable = true})", "description": "تحويل لقائمة", "return": "List<E>", "category": "collection", "class": "Iterable" },
+    { "name": "toSet", "signature": "toSet()", "description": "تحويل لمجموعة", "return": "Set<E>", "category": "collection", "class": "Iterable" },
+    { "name": "sort", "signature": "sort([int compare(E a, E b)?])", "description": "ترتيب", "return": "void", "category": "collection", "class": "List" },
+    { "name": "reversed", "signature": "reversed", "description": "معكوس", "return": "Iterable<E>", "category": "collection", "class": "List" },
+    { "name": "shuffle", "signature": "shuffle([Random? random])", "description": "خلط عشوائي", "return": "void", "category": "collection", "class": "List" },
+    { "name": "sublist", "signature": "sublist(int start, [int? end])", "description": "قائمة فرعية", "return": "List<E>", "category": "collection", "class": "List" },
+    { "name": "fillRange", "signature": "fillRange(int start, int end, [E? fillValue])", "description": "تعبئة نطاق", "return": "void", "category": "collection", "class": "List" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال Map
+    // ══════════════════════════════════════════════════════════
+    { "name": "keys", "signature": "keys", "description": "المفاتيح", "return": "Iterable<K>", "category": "collection", "class": "Map" },
+    { "name": "values", "signature": "values", "description": "القيم", "return": "Iterable<V>", "category": "collection", "class": "Map" },
+    { "name": "entries", "signature": "entries", "description": "الأزواج", "return": "Iterable<MapEntry<K, V>>", "category": "collection", "class": "Map" },
+    { "name": "length", "signature": "length", "description": "الطول", "return": "int", "category": "collection", "class": "Map" },
+    { "name": "isEmpty", "signature": "isEmpty", "description": "هل فارغ", "return": "bool", "category": "collection", "class": "Map" },
+    { "name": "isNotEmpty", "signature": "isNotEmpty", "description": "هل غير فارغ", "return": "bool", "category": "collection", "class": "Map" },
+    { "name": "containsKey", "signature": "containsKey(Object? key)", "description": "هل يحتوي مفتاح", "return": "bool", "category": "collection", "class": "Map" },
+    { "name": "containsValue", "signature": "containsValue(Object? value)", "description": "هل يحتوي قيمة", "return": "bool", "category": "collection", "class": "Map" },
+    { "name": "putIfAbsent", "signature": "putIfAbsent(K key, V ifAbsent())", "description": "إضافة إذا لم يوجد", "return": "V", "category": "collection", "class": "Map" },
+    { "name": "remove", "signature": "remove(Object? key)", "description": "إزالة", "return": "V?", "category": "collection", "class": "Map" },
+    { "name": "clear", "signature": "clear()", "description": "مسح", "return": "void", "category": "collection", "class": "Map" },
+    { "name": "addAll", "signature": "addAll(Map<K, V> other)", "description": "إضافة الكل", "return": "void", "category": "collection", "class": "Map" },
+    { "name": "forEach", "signature": "forEach(void action(K key, V value))", "description": "على كل زوج", "return": "void", "category": "collection", "class": "Map" },
+    { "name": "map", "signature": "map<K2, V2>(MapEntry<K2, V2> convert(K key, V value))", "description": "تحويل", "return": "Map<K2, V2>", "category": "collection", "class": "Map" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال Future
+    // ══════════════════════════════════════════════════════════
+    { "name": "then", "signature": "then<R>(FutureOr<R> onValue(T value), {Function? onError})", "description": "عند الاكتمال", "return": "Future<R>", "category": "async", "class": "Future" },
+    { "name": "catchError", "signature": "catchError(Function onError, {bool test(Object error)?})", "description": "عند الخطأ", "return": "Future<T>", "category": "async", "class": "Future" },
+    { "name": "whenComplete", "signature": "whenComplete(FutureOr<void> action())", "description": "عند الانتهاء", "return": "Future<T>", "category": "async", "class": "Future" },
+    { "name": "timeout", "signature": "timeout(Duration timeLimit, {FutureOr<T> onTimeout()?})", "description": "مع مهلة", "return": "Future<T>", "category": "async", "class": "Future" },
+    { "name": "wait", "signature": "Future.wait<T>(Iterable<Future<T>> futures, {bool eagerError = false})", "description": "انتظار الكل", "return": "Future<List<T>>", "category": "async", "class": "Future" },
+    { "name": "delayed", "signature": "Future.delayed(Duration duration, [FutureOr<T> computation()?])", "description": "تأخير", "return": "Future<T>", "category": "async", "class": "Future" },
+    { "name": "value", "signature": "Future.value([FutureOr<T>? value])", "description": "Future فوري", "return": "Future<T>", "category": "async", "class": "Future" },
+    { "name": "error", "signature": "Future.error(Object error, [StackTrace? stackTrace])", "description": "Future بخطأ", "return": "Future<T>", "category": "async", "class": "Future" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال Stream
+    // ══════════════════════════════════════════════════════════
+    { "name": "listen", "signature": "listen(void onData(T event)?, {Function? onError, void onDone()?, bool? cancelOnError})", "description": "الاستماع", "return": "StreamSubscription<T>", "category": "async", "class": "Stream" },
+    { "name": "map", "signature": "map<S>(S convert(T event))", "description": "تحويل", "return": "Stream<S>", "category": "async", "class": "Stream" },
+    { "name": "where", "signature": "where(bool test(T event))", "description": "تصفية", "return": "Stream<T>", "category": "async", "class": "Stream" },
+    { "name": "take", "signature": "take(int count)", "description": "أخذ N", "return": "Stream<T>", "category": "async", "class": "Stream" },
+    { "name": "skip", "signature": "skip(int count)", "description": "تخطي N", "return": "Stream<T>", "category": "async", "class": "Stream" },
+    { "name": "toList", "signature": "toList()", "description": "تحويل لقائمة", "return": "Future<List<T>>", "category": "async", "class": "Stream" },
+    { "name": "first", "signature": "first", "description": "أول قيمة", "return": "Future<T>", "category": "async", "class": "Stream" },
+    { "name": "drain", "signature": "drain<E>([E? futureValue])", "description": "استنزاف", "return": "Future<E>", "category": "async", "class": "Stream" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال Duration
+    // ══════════════════════════════════════════════════════════
+    { "name": "inDays", "signature": "inDays", "description": "بالأيام", "return": "int", "category": "core", "class": "Duration" },
+    { "name": "inHours", "signature": "inHours", "description": "بالساعات", "return": "int", "category": "core", "class": "Duration" },
+    { "name": "inMinutes", "signature": "inMinutes", "description": "بالدقائق", "return": "int", "category": "core", "class": "Duration" },
+    { "name": "inSeconds", "signature": "inSeconds", "description": "بالثواني", "return": "int", "category": "core", "class": "Duration" },
+    { "name": "inMilliseconds", "signature": "inMilliseconds", "description": "بالميلي ثانية", "return": "int", "category": "core", "class": "Duration" },
+    { "name": "inMicroseconds", "signature": "inMicroseconds", "description": "بالميكرو ثانية", "return": "int", "category": "core", "class": "Duration" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال DateTime
+    // ══════════════════════════════════════════════════════════
+    { "name": "now", "signature": "DateTime.now()", "description": "الآن", "return": "DateTime", "category": "core", "class": "DateTime" },
+    { "name": "utc", "signature": "DateTime.utc(int year, [int month = 1, int day = 1, int hour = 0, int minute = 0, int second = 0, int millisecond = 0, int microsecond = 0])", "description": "بالتوقيت العالمي", "return": "DateTime", "category": "core", "class": "DateTime" },
+    { "name": "parse", "signature": "DateTime.parse(String formattedString)", "description": "تحويل من نص", "return": "DateTime", "category": "core", "class": "DateTime" },
+    { "name": "year", "signature": "year", "description": "السنة", "return": "int", "category": "core", "class": "DateTime" },
+    { "name": "month", "signature": "month", "description": "الشهر", "return": "int", "category": "core", "class": "DateTime" },
+    { "name": "day", "signature": "day", "description": "اليوم", "return": "int", "category": "core", "class": "DateTime" },
+    { "name": "hour", "signature": "hour", "description": "الساعة", "return": "int", "category": "core", "class": "DateTime" },
+    { "name": "minute", "signature": "minute", "description": "الدقيقة", "return": "int", "category": "core", "class": "DateTime" },
+    { "name": "second", "signature": "second", "description": "الثانية", "return": "int", "category": "core", "class": "DateTime" },
+    { "name": "weekday", "signature": "weekday", "description": "يوم الأسبوع", "return": "int", "category": "core", "class": "DateTime" },
+    { "name": "toIso8601String", "signature": "toIso8601String()", "description": "تحويل لـ ISO 8601", "return": "String", "category": "core", "class": "DateTime" },
+    { "name": "add", "signature": "add(Duration duration)", "description": "إضافة مدة", "return": "DateTime", "category": "core", "class": "DateTime" },
+    { "name": "subtract", "signature": "subtract(Duration duration)", "description": "طرح مدة", "return": "DateTime", "category": "core", "class": "DateTime" },
+    { "name": "difference", "signature": "difference(DateTime other)", "description": "الفرق", "return": "Duration", "category": "core", "class": "DateTime" },
+
+    // ══════════════════════════════════════════════════════════
+    // دوال Color
+    // ══════════════════════════════════════════════════════════
+    { "name": "withOpacity", "signature": "withOpacity(double opacity)", "description": "شفافية", "return": "Color", "category": "painting", "class": "Color" },
+    { "name": "withAlpha", "signature": "withAlpha(int a)", "description": "alpha", "return": "Color", "category": "painting", "class": "Color" },
+    { "name": "withRed", "signature": "withRed(int r)", "description": "أحمر", "return": "Color", "category": "painting", "class": "Color" },
+    { "name": "withGreen", "signature": "withGreen(int g)", "description": "أخضر", "return": "Color", "category": "painting", "class": "Color" },
+    { "name": "withBlue", "signature": "withBlue(int b)", "description": "أزرق", "return": "Color", "category": "painting", "class": "Color" },
+    { "name": "red", "signature": "red", "description": "قناة الأحمر", "return": "int", "category": "painting", "class": "Color" },
+    { "name": "green", "signature": "green", "description": "قناة الأخضر", "return": "int", "category": "painting", "class": "Color" },
+    { "name": "blue", "signature": "blue", "description": "قناة الأزرق", "return": "int", "category": "painting", "class": "Color" },
+    { "name": "alpha", "signature": "alpha", "description": "قناة Alpha", "return": "int", "category": "painting", "class": "Color" },
+    { "name": "opacity", "signature": "opacity", "description": "الشفافية", "return": "double", "category": "painting", "class": "Color" },
+    { "name": "value", "signature": "value", "description": "القيمة الست عشرية", "return": "int", "category": "painting", "class": "Color" }
+  ]
+}

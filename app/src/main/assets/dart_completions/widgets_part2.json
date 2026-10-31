@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "part": 2,
+  "widgets": [
+    // ══════════════════════════════════════════════════════════
+    // Input & Forms
+    // ══════════════════════════════════════════════════════════
+    { "name": "TextField", "category": "input", "description": "حقل إدخال", "snippet": "TextField(\n  controller: TextEditingController(),\n  decoration: const InputDecoration(\n    hintText: 'Enter text',\n    border: OutlineInputBorder(),\n  ),\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 10 },
+    { "name": "TextFormField", "category": "input", "description": "حقل إدخال في نموذج", "snippet": "TextFormField(\n  controller: TextEditingController(),\n  decoration: const InputDecoration(\n    labelText: 'Label',\n  ),\n  validator: (value) {\n    if (value == null || value.isEmpty) {\n      return 'Required';\n    }\n    return null;\n  },\n)", "priority": 9 },
+    { "name": "Form", "category": "input", "description": "نموذج", "snippet": "Form(\n  key: GlobalKey<FormState>(),\n  child: Column(\n    children: [\n      $0\n    ],\n  ),\n)", "priority": 8 },
+    { "name": "TextEditingController", "category": "input", "description": "متحكم بحقل النص", "snippet": "TextEditingController(text: 'initial value')", "priority": 7 },
+    { "name": "InputDecoration", "category": "input", "description": "تزيين حقل الإدخال", "snippet": "const InputDecoration(\n  labelText: 'Label',\n  hintText: 'Hint',\n  border: OutlineInputBorder(),\n  prefixIcon: Icon(Icons.person),\n)", "priority": 8 },
+    { "name": "OutlineInputBorder", "category": "input", "description": "حدود مخطوطة", "snippet": "const OutlineInputBorder(\n  borderRadius: BorderRadius.all(Radius.circular(8.0)),\n  borderSide: BorderSide(color: Colors.grey),\n)", "priority": 6 },
+    { "name": "UnderlineInputBorder", "category": "input", "description": "حدود سفلية", "snippet": "const UnderlineInputBorder()", "priority": 5 },
+    { "name": "Checkbox", "category": "input", "description": "خانة اختيار", "snippet": "Checkbox(\n  value: false,\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 8 },
+    { "name": "CheckboxListTile", "category": "input", "description": "خانة مع عنوان", "snippet": "CheckboxListTile(\n  value: false,\n  title: const Text('Title'),\n  subtitle: const Text('Subtitle'),\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 7 },
+    { "name": "Radio", "category": "input", "description": "زر راديو", "snippet": "Radio<String>(\n  value: 'value',\n  groupValue: selectedValue,\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 7 },
+    { "name": "RadioListTile", "category": "input", "description": "راديو مع عنوان", "snippet": "RadioListTile<String>(\n  value: 'value',\n  groupValue: selectedValue,\n  title: const Text('Title'),\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 6 },
+    { "name": "Switch", "category": "input", "description": "مفتاح تبديل", "snippet": "Switch(\n  value: false,\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 8 },
+    { "name": "SwitchListTile", "category": "input", "description": "مفتاح مع عنوان", "snippet": "SwitchListTile(\n  value: false,\n  title: const Text('Title'),\n  subtitle: const Text('Subtitle'),\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 7 },
+    { "name": "Slider", "category": "input", "description": "شريط تمرير", "snippet": "Slider(\n  value: 0.5,\n  min: 0.0,\n  max: 1.0,\n  divisions: 10,\n  label: '0.5',\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 7 },
+    { "name": "RangeSlider", "category": "input", "description": "شريط نطاق", "snippet": "RangeSlider(\n  values: const RangeValues(0.2, 0.8),\n  onChanged: (values) {\n    $0\n  },\n)", "priority": 5 },
+    { "name": "DropdownButton", "category": "input", "description": "قائمة منسدلة", "snippet": "DropdownButton<String>(\n  value: selectedValue,\n  onChanged: (value) {\n    $0\n  },\n  items: const [\n    DropdownMenuItem(value: 'a', child: Text('Option A')),\n    DropdownMenuItem(value: 'b', child: Text('Option B')),\n  ],\n)", "priority": 7 },
+    { "name": "DropdownButtonFormField", "category": "input", "description": "قائمة منسدلة في نموذج", "snippet": "DropdownButtonFormField<String>(\n  value: selectedValue,\n  onChanged: (value) {\n    $0\n  },\n  items: const [\n    DropdownMenuItem(value: 'a', child: Text('Option A')),\n  ],\n)", "priority": 6 },
+    { "name": "DropdownMenuItem", "category": "input", "description": "عنصر قائمة منسدلة", "snippet": "DropdownMenuItem<String>(\n  value: 'value',\n  child: const Text('Label'),\n)", "priority": 4 },
+    { "name": "CupertinoSwitch", "category": "input", "description": "مفتاح iOS", "snippet": "CupertinoSwitch(\n  value: false,\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 5 },
+    { "name": "CupertinoSlider", "category": "input", "description": "شريط تمرير iOS", "snippet": "CupertinoSlider(\n  value: 0.5,\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 4 },
+    { "name": "CupertinoTextField", "category": "input", "description": "حقل إدخال iOS", "snippet": "CupertinoTextField(\n  placeholder: 'Enter text',\n  controller: TextEditingController(),\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 5 },
+    { "name": "Autocomplete", "category": "input", "description": "إكمال تلقائي", "snippet": "Autocomplete<String>(\n  optionsBuilder: (textEditingValue) {\n    return const Iterable<String>.empty();\n  },\n  onSelected: (selection) {\n    $0\n  },\n)", "priority": 5 },
+    { "name": "SearchBar", "category": "input", "description": "شريط بحث", "snippet": "SearchBar(\n  hintText: 'Search',\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 6 },
+    { "name": "SearchAnchor", "category": "input", "description": "مرساة بحث", "snippet": "SearchAnchor(\n  builder: (context, controller) {\n    return IconButton(\n      onPressed: () => controller.openView(),\n      icon: const Icon(Icons.search),\n    );\n  },\n  suggestionsBuilder: (context, controller) {\n    return const Iterable<Widget>.empty();\n  },\n)", "priority": 4 },
+    { "name": "Focus", "category": "input", "description": "تركيز", "snippet": "Focus(\n  onFocusChange: (hasFocus) {\n    $0\n  },\n  child: const SizedBox(),\n)", "priority": 4 },
+    { "name": "RawKeyboardListener", "category": "input", "description": "مستمع لوحة المفاتيح", "snippet": "RawKeyboardListener(\n  focusNode: FocusNode(),\n  onKey: (event) {\n    $0\n  },\n  child: const SizedBox(),\n)", "priority": 3 },
+
+    // ══════════════════════════════════════════════════════════
+    // Text widgets
+    // ══════════════════════════════════════════════════════════
+    { "name": "Text.rich", "category": "text", "description": "نص منسق", "snippet": "Text.rich(\n  TextSpan(\n    text: 'Hello ',\n    children: [\n      TextSpan(\n        text: 'World',\n        style: TextStyle(fontWeight: FontWeight.bold),\n      ),\n    ],\n  ),\n)", "priority": 6 },
+    { "name": "TextSpan", "category": "text", "description": "جزء نصي", "snippet": "TextSpan(\n  text: 'Hello',\n  style: const TextStyle(color: Colors.black),\n  children: const [\n    TextSpan(text: ' World'),\n  ],\n)", "priority": 5 },
+    { "name": "WidgetSpan", "category": "text", "description": "Widget داخل النص", "snippet": "WidgetSpan(\n  child: Icon(Icons.star, size: 14.0),\n  alignment: PlaceholderAlignment.middle,\n)", "priority": 4 },
+    { "name": "TextStyle", "category": "text", "description": "نمط نصي", "snippet": "const TextStyle(\n  fontSize: 16.0,\n  fontWeight: FontWeight.bold,\n  color: Colors.black,\n  fontStyle: FontStyle.normal,\n)", "priority": 8 },
+    { "name": "DefaultTextStyle", "category": "text", "description": "نمط نص افتراضي", "snippet": "DefaultTextStyle(\n  style: const TextStyle(fontSize: 14.0),\n  child: $0,\n)", "priority": 5 },
+
+    // ══════════════════════════════════════════════════════════
+    // Scrolling
+    // ══════════════════════════════════════════════════════════
+    { "name": "ListView", "category": "scroll", "description": "قائمة", "snippet": "ListView(\n  padding: const EdgeInsets.all(8.0),\n  children: const [\n    ListTile(title: Text('Item 1')),\n    ListTile(title: Text('Item 2')),\n  ],\n)", "priority": 10 },
+    { "name": "ListView.builder", "category": "scroll", "description": "قائمة ديناميكية", "snippet": "ListView.builder(\n  itemCount: items.length,\n  itemBuilder: (context, index) {\n    return ListTile(\n      title: Text(items[index].toString()),\n    );\n  },\n)", "priority": 10 },
+    { "name": "ListView.separated", "category": "scroll", "description": "قائمة مع فواصل", "snippet": "ListView.separated(\n  itemCount: items.length,\n  separatorBuilder: (context, index) {\n    return const Divider();\n  },\n  itemBuilder: (context, index) {\n    return ListTile(\n      title: Text(items[index].toString()),\n    );\n  },\n)", "priority": 8 },
+    { "name": "ListView.custom", "category": "scroll", "description": "قائمة مخصصة", "snippet": "ListView.custom(\n  childrenDelegate: SliverChildBuilderDelegate(\n    (context, index) {\n      return ListTile(title: Text('$index'));\n    },\n    childCount: 100,\n  ),\n)", "priority": 4 },
+    { "name": "GridView", "category": "scroll", "description": "شبكة", "snippet": "GridView.count(\n  crossAxisCount: 2,\n  crossAxisSpacing: 8.0,\n  mainAxisSpacing: 8.0,\n  children: const [\n    Card(child: Center(child: Text('1'))),\n    Card(child: Center(child: Text('2'))),\n  ],\n)", "priority": 8 },
+    { "name": "GridView.builder", "category": "scroll", "description": "شبكة ديناميكية", "snippet": "GridView.builder(\n  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(\n    crossAxisCount: 2,\n    crossAxisSpacing: 8.0,\n    mainAxisSpacing: 8.0,\n  ),\n  itemCount: items.length,\n  itemBuilder: (context, index) {\n    return Card(child: Center(child: Text('$index')));\n  },\n)", "priority": 8 },
+    { "name": "GridView.extent", "category": "scroll", "description": "شبكة بعرض محدد", "snippet": "GridView.extent(\n  maxCrossAxisExtent: 100.0,\n  children: const [\n    // items\n  ],\n)", "priority": 4 },
+    { "name": "CustomScrollView", "category": "scroll", "description": "تمرير مخصص", "snippet": "CustomScrollView(\n  slivers: [\n    SliverAppBar(\n      title: const Text('Title'),\n      floating: true,\n    ),\n    SliverList(\n      delegate: SliverChildBuilderDelegate(\n        (context, index) {\n          return ListTile(title: Text('Item $index'));\n        },\n        childCount: 100,\n      ),\n    ),\n  ],\n)", "priority": 6 },
+    { "name": "SingleChildScrollView", "category": "scroll", "description": "تمرير بسيط", "snippet": "SingleChildScrollView(\n  padding: const EdgeInsets.all(8.0),\n  child: Column(\n    children: [\n      $0\n    ],\n  ),\n)", "priority": 8 },
+    { "name": "NestedScrollView", "category": "scroll", "description": "تمرير متداخل", "snippet": "NestedScrollView(\n  headerSliverBuilder: (context, innerBoxIsScrolled) {\n    return [];\n  },\n  body: const SizedBox(),\n)", "priority": 4 },
+    { "name": "Scrollbar", "category": "scroll", "description": "شريط تمرير مرئي", "snippet": "Scrollbar(\n  child: ListView(),\n)", "priority": 6 },
+    { "name": "ScrollConfiguration", "category": "scroll", "description": "إعدادات التمرير", "snippet": "ScrollConfiguration(\n  behavior: ScrollBehavior(),\n  child: $0,\n)", "priority": 3 },
+    { "name": "Scrollable", "category": "scroll", "description": "تمرير قابل", "snippet": "Scrollable(\n  viewportBuilder: (context, position) {\n    return $0;\n  },\n)", "priority": 3 },
+    { "name": "PageView", "category": "scroll", "description": "عرض بالصفحات", "snippet": "PageView(\n  controller: PageController(),\n  onPageChanged: (index) {\n    $0\n  },\n  children: const [\n    Center(child: Text('Page 1')),\n    Center(child: Text('Page 2')),\n  ],\n)", "priority": 7 },
+    { "name": "PageView.builder", "category": "scroll", "description": "صفحات ديناميكية", "snippet": "PageView.builder(\n  controller: PageController(),\n  itemCount: 10,\n  itemBuilder: (context, index) {\n    return Center(child: Text('Page $index'));\n  },\n)", "priority": 7 },
+    { "name": "PageController", "category": "scroll", "description": "متحكم بالصفحات", "snippet": "PageController(\n  initialPage: 0,\n  viewportFraction: 1.0,\n)", "priority": 5 },
+    { "name": "RefreshIndicator", "category": "scroll", "description": "مؤشر التحديث", "snippet": "RefreshIndicator(\n  onRefresh: () async {\n    $0\n  },\n  child: ListView(),\n)", "priority": 7 },
+    { "name": "ReorderableListView", "category": "scroll", "description": "قائمة قابلة للترتيب", "snippet": "ReorderableListView(\n  onReorder: (oldIndex, newIndex) {\n    $0\n  },\n  children: const [\n    // items\n  ],\n)", "priority": 5 },
+
+    // ══════════════════════════════════════════════════════════
+    // Slivers
+    // ══════════════════════════════════════════════════════════
+    { "name": "SliverAppBar", "category": "sliver", "description": "شريط Sliver", "snippet": "SliverAppBar(\n  expandedHeight: 200.0,\n  pinned: true,\n  flexibleSpace: FlexibleSpaceBar(\n    title: const Text('Title'),\n    background: Image.network('https://example.com/image.png', fit: BoxFit.cover),\n  ),\n)", "priority": 7 },
+    { "name": "SliverList", "category": "sliver", "description": "قائمة Sliver", "snippet": "SliverList(\n  delegate: SliverChildBuilderDelegate(\n    (context, index) {\n      return ListTile(title: Text('Item $index'));\n    },\n    childCount: 100,\n  ),\n)", "priority": 7 },
+    { "name": "SliverGrid", "category": "sliver", "description": "شبكة Sliver", "snippet": "SliverGrid(\n  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(\n    crossAxisCount: 2,\n  ),\n  delegate: SliverChildBuilderDelegate(\n    (context, index) {\n      return Card(child: Center(child: Text('$index')));\n    },\n    childCount: 100,\n  ),\n)", "priority": 6 },
+    { "name": "SliverToBoxAdapter", "category": "sliver", "description": "مهايئ Sliver", "snippet": "SliverToBoxAdapter(\n  child: $0,\n)", "priority": 6 },
+    { "name": "SliverPadding", "category": "sliver", "description": "حشوة Sliver", "snippet": "SliverPadding(\n  padding: const EdgeInsets.all(8.0),\n  sliver: SliverList(\n    delegate: SliverChildListDelegate([]),\n  ),\n)", "priority": 4 },
+    { "name": "SliverFillRemaining", "category": "sliver", "description": "Sliver يملأ المتبقي", "snippet": "SliverFillRemaining(\n  child: $0,\n)", "priority": 4 },
+    { "name": "SliverFillViewport", "category": "sliver", "description": "Sliver يملأ العرض", "snippet": "SliverFillViewport(\n  delegate: SliverChildListDelegate([]),\n)", "priority": 3 },
+    { "name": "SliverPersistentHeader", "category": "sliver", "description": "ترويسة Sliver ثابتة", "snippet": "SliverPersistentHeader(\n  delegate: SliverPersistentHeaderDelegate(),\n  pinned: true,\n)", "priority": 4 },
+    { "name": "SliverOpacity", "category": "sliver", "description": "شفافية Sliver", "snippet": "SliverOpacity(\n  opacity: 0.5,\n  sliver: SliverList(delegate: SliverChildListDelegate([])),\n)", "priority": 3 },
+    { "name": "SliverAnimatedOpacity", "category": "sliver", "description": "شفافية Sliver متحركة", "snippet": "SliverAnimatedOpacity(\n  opacity: 0.5,\n  duration: const Duration(milliseconds: 300),\n  sliver: SliverList(delegate: SliverChildListDelegate([])),\n)", "priority": 3 },
+    { "name": "SliverFadeTransition", "category": "sliver", "description": "انتقال تلاشٍ Sliver", "snippet": "SliverFadeTransition(\n  opacity: animation,\n  sliver: SliverList(delegate: SliverChildListDelegate([])),\n)", "priority": 3 },
+    { "name": "SliverLayoutBuilder", "category": "sliver", "description": "باني Sliver", "snippet": "SliverLayoutBuilder(\n  builder: (context, constraints) {\n    return $0;\n  },\n)", "priority": 3 },
+    { "name": "SliverIgnorePointer", "category": "sliver", "description": "تجاهل اللمس Sliver", "snippet": "SliverIgnorePointer(\n  ignoring: true,\n  sliver: SliverList(delegate: SliverChildListDelegate([])),\n)", "priority": 3 },
+    { "name": "SliverSafeArea", "category": "sliver", "description": "منطقة آمنة Sliver", "snippet": "SliverSafeArea(\n  sliver: SliverList(delegate: SliverChildListDelegate([])),\n)", "priority": 3 },
+    { "name": "SliverSnapDelegate", "category": "sliver", "description": "مفوّض Sliver", "snippet": "SliverSnapDelegate()", "priority": 2 },
+
+    // ══════════════════════════════════════════════════════════
+    // Cupertino (iOS)
+    // ══════════════════════════════════════════════════════════
+    { "name": "CupertinoApp", "category": "cupertino", "description": "تطبيق iOS", "snippet": "CupertinoApp(\n  title: 'App',\n  theme: const CupertinoThemeData(),\n  home: const MyHomePage(),\n)", "priority": 6 },
+    { "name": "CupertinoPageScaffold", "category": "cupertino", "description": "هيكل صفحة iOS", "snippet": "CupertinoPageScaffold(\n  navigationBar: const CupertinoNavigationBar(\n    middle: Text('Title'),\n  ),\n  child: $0,\n)", "priority": 6 },
+    { "name": "CupertinoNavigationBar", "category": "cupertino", "description": "شريط iOS", "snippet": "const CupertinoNavigationBar(\n  middle: Text('Title'),\n  leading: CupertinoButton(child: Icon(Icons.arrow_back), onPressed: null),\n)", "priority": 5 },
+    { "name": "CupertinoButton", "category": "cupertino", "description": "زر iOS", "snippet": "CupertinoButton(\n  onPressed: () {\n    $0\n  },\n  child: const Text('Button'),\n)", "priority": 6 },
+    { "name": "CupertinoButton.filled", "category": "cupertino", "description": "زر iOS ممتلئ", "snippet": "CupertinoButton.filled(\n  onPressed: () {\n    $0\n  },\n  child: const Text('Button'),\n)", "priority": 5 },
+    { "name": "CupertinoAlertDialog", "category": "cupertino", "description": "حوار iOS", "snippet": "CupertinoAlertDialog(\n  title: const Text('Title'),\n  content: const Text('Message'),\n  actions: [\n    CupertinoDialogAction(\n      onPressed: () => Navigator.pop(context),\n      child: const Text('OK'),\n    ),\n  ],\n)", "priority": 5 },
+    { "name": "CupertinoDialogAction", "category": "cupertino", "description": "زر حوار iOS", "snippet": "CupertinoDialogAction(\n  onPressed: () {\n    $0\n  },\n  child: const Text('OK'),\n)", "priority": 4 },
+    { "name": "CupertinoActionSheet", "category": "cupertino", "description": "ورقة إجراءات iOS", "snippet": "CupertinoActionSheet(\n  title: const Text('Title'),\n  actions: [\n    CupertinoActionSheetAction(\n      onPressed: () {},\n      child: const Text('Action'),\n    ),\n  ],\n)", "priority": 4 },
+    { "name": "CupertinoActionSheetAction", "category": "cupertino", "description": "إجراء ورقة iOS", "snippet": "CupertinoActionSheetAction(\n  onPressed: () {\n    $0\n  },\n  child: const Text('Action'),\n)", "priority": 3 },
+    { "name": "CupertinoActivityIndicator", "category": "cupertino", "description": "مؤشر iOS", "snippet": "const CupertinoActivityIndicator(\n  radius: 10.0,\n  animating: true,\n)", "priority": 5 },
+    { "name": "CupertinoPicker", "category": "cupertino", "description": "منتقي iOS", "snippet": "CupertinoPicker(\n  itemExtent: 40.0,\n  onSelectedItemChanged: (index) {\n    $0\n  },\n  children: const [\n    Center(child: Text('Item 1')),\n    Center(child: Text('Item 2')),\n  ],\n)", "priority": 5 },
+    { "name": "CupertinoDatePicker", "category": "cupertino", "description": "منتقي تاريخ iOS", "snippet": "CupertinoDatePicker(\n  mode: CupertinoDatePickerMode.date,\n  onDateTimeChanged: (date) {\n    $0\n  },\n)", "priority": 5 },
+    { "name": "CupertinoTimerPicker", "category": "cupertino", "description": "منتقي وقت iOS", "snippet": "CupertinoTimerPicker(\n  onTimerDurationChanged: (duration) {\n    $0\n  },\n)", "priority": 4 },
+    { "name": "CupertinoSegmentedControl", "category": "cupertino", "description": "تحكم مقسّم iOS", "snippet": "CupertinoSegmentedControl<String>(\n  children: const {\n    'a': Text('A'),\n    'b': Text('B'),\n  },\n  onValueChanged: (value) {\n    $0\n  },\n)", "priority": 4 },
+    { "name": "CupertinoSlidingSegmentedControl", "category": "cupertino", "description": "تحكم منزلق iOS", "snippet": "CupertinoSlidingSegmentedControl<String>(\n  children: const {\n    'a': Text('A'),\n    'b': Text('B'),\n  },\n  onValueChanged: (value) {\n    $0\n  },\n)", "priority": 4 },
+    { "name": "CupertinoTabScaffold", "category": "cupertino", "description": "هيكل تبويبات iOS", "snippet": "CupertinoTabScaffold(\n  tabBar: CupertinoTabBar(\n    items: const [\n      BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),\n      BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),\n    ],\n  ),\n  tabBuilder: (context, index) {\n    return const SizedBox();\n  },\n)", "priority": 5 },
+    { "name": "CupertinoTabBar", "category": "cupertino", "description": "شريط تبويبات iOS", "snippet": "CupertinoTabBar(\n  items: const [\n    BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),\n    BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),\n  ],\n)", "priority": 4 },
+    { "name": "CupertinoTabView", "category": "cupertino", "description": "عرض تبويب iOS", "snippet": "CupertinoTabView(\n  builder: (context) {\n    return $0;\n  },\n)", "priority": 3 },
+    { "name": "CupertinoPageRoute", "category": "cupertino", "description": "مسار iOS", "snippet": "CupertinoPageRoute(\n  builder: (context) => const SecondPage(),\n)", "priority": 5 },
+    { "name": "CupertinoPageTransition", "category": "cupertino", "description": "انتقال صفحة iOS", "snippet": "CupertinoPageTransition(\n  primaryRouteAnimation: animation,\n  secondaryRouteAnimation: secondaryAnimation,\n  linearTransition: true,\n  child: $0,\n)", "priority": 3 },
+    { "name": "CupertinoFullscreenDialogTransition", "category": "cupertino", "description": "انتقال حوار iOS", "snippet": "CupertinoFullscreenDialogTransition(\n  primaryRouteAnimation: animation,\n  linearTransition: true,\n  child: $0,\n)", "priority": 3 },
+    { "name": "CupertinoContextMenu", "category": "cupertino", "description": "قائمة سياق iOS", "snippet": "CupertinoContextMenu(\n  actions: const [],\n  child: $0,\n)", "priority": 4 },
+    { "name": "CupertinoContextMenuAction", "category": "cupertino", "description": "إجراء قائمة iOS", "snippet": "CupertinoContextMenuAction(\n  onPressed: () {\n    $0\n  },\n  child: const Text('Action'),\n)", "priority": 3 },
+    { "name": "CupertinoListTile", "category": "cupertino", "description": "عنصر قائمة iOS", "snippet": "CupertinoListTile(\n  title: const Text('Title'),\n  subtitle: const Text('Subtitle'),\n  trailing: const CupertinoListTileChevron(),\n  onTap: () {\n    $0\n  },\n)", "priority": 5 },
+    { "name": "CupertinoListSection", "category": "cupertino", "description": "قسم قائمة iOS", "snippet": "CupertinoListSection(\n  children: const [\n    // items\n  ],\n)", "priority": 4 },
+    { "name": "CupertinoSearchTextField", "category": "cupertino", "description": "حقل بحث iOS", "snippet": "CupertinoSearchTextField(\n  placeholder: 'Search',\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 5 },
+    { "name": "CupertinoFormSection", "category": "cupertino", "description": "قسم نموذج iOS", "snippet": "CupertinoFormSection(\n  header: const Text('Header'),\n  children: const [\n    // items\n  ],\n)", "priority": 3 },
+    { "name": "CupertinoFormRow", "category": "cupertino", "description": "صف نموذج iOS", "snippet": "CupertinoFormRow(\n  prefix: const Text('Label'),\n  child: $0,\n)", "priority": 3 },
+    { "name": "CupertinoColors", "category": "cupertino", "description": "ألوان iOS", "snippet": "CupertinoColors.activeBlue", "priority": 4 },
+
+    // ══════════════════════════════════════════════════════════
+    // Adaptive
+    // ══════════════════════════════════════════════════════════
+    { "name": "CircularProgressIndicator.adaptive", "category": "adaptive", "description": "مؤشر تكيفي", "snippet": "CircularProgressIndicator.adaptive()", "priority": 4 },
+    { "name": "Slider.adaptive", "category": "adaptive", "description": "شريط تكيفي", "snippet": "Slider.adaptive(\n  value: 0.5,\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 3 },
+    { "name": "Switch.adaptive", "category": "adaptive", "description": "مفتاح تكيفي", "snippet": "Switch.adaptive(\n  value: false,\n  onChanged: (value) {\n    $0\n  },\n)", "priority": 4 },
+    { "name": "AlertDialog.adaptive", "category": "adaptive", "description": "حوار تكيفي", "snippet": "AlertDialog.adaptive(\n  title: const Text('Title'),\n  content: const Text('Message'),\n  actions: [\n    TextButton(\n      onPressed: () => Navigator.pop(context),\n      child: const Text('OK'),\n    ),\n  ],\n)", "priority": 4 }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "part": 1,
+  "widgets": [
+    // ══════════════════════════════════════════════════════════
+    // Layout widgets
+    // ══════════════════════════════════════════════════════════
+    { "name": "Column", "category": "layout", "description": "ترتيب عمودي", "snippet": "Column(\n  mainAxisAlignment: MainAxisAlignment.start,\n  crossAxisAlignment: CrossAxisAlignment.center,\n  children: const [\n    $0\n  ],\n)", "priority": 10 },
+    { "name": "Row", "category": "layout", "description": "ترتيب أفقي", "snippet": "Row(\n  mainAxisAlignment: MainAxisAlignment.start,\n  crossAxisAlignment: CrossAxisAlignment.center,\n  children: const [\n    $0\n  ],\n)", "priority": 10 },
+    { "name": "Container", "category": "layout", "description": "حاوية مرنة", "snippet": "Container(\n  padding: const EdgeInsets.all(8.0),\n  child: $0,\n)", "priority": 10 },
+    { "name": "Center", "category": "layout", "description": "توسيط", "snippet": "Center(\n  child: $0,\n)", "priority": 9 },
+    { "name": "Padding", "category": "layout", "description": "حشوة", "snippet": "Padding(\n  padding: const EdgeInsets.all(8.0),\n  child: $0,\n)", "priority": 9 },
+    { "name": "SizedBox", "category": "layout", "description": "صندوق ثابت", "snippet": "const SizedBox(\n  width: 100.0,\n  height: 100.0,\n  child: $0,\n)", "priority": 9 },
+    { "name": "Expanded", "category": "layout", "description": "تمديد", "snippet": "Expanded(\n  flex: 1,\n  child: $0,\n)", "priority": 9 },
+    { "name": "Flexible", "category": "layout", "description": "مرونة", "snippet": "Flexible(\n  flex: 1,\n  fit: FlexFit.loose,\n  child: $0,\n)", "priority": 8 },
+    { "name": "Stack", "category": "layout", "description": "ترتيب متراكب", "snippet": "Stack(\n  alignment: AlignmentDirectional.topStart,\n  children: [\n    $0\n  ],\n)", "priority": 9 },
+    { "name": "Positioned", "category": "layout", "description": "موقع مطلق", "snippet": "Positioned(\n  top: 0,\n  left: 0,\n  child: $0,\n)", "priority": 8 },
+    { "name": "Align", "category": "layout", "description": "محاذاة", "snippet": "Align(\n  alignment: Alignment.center,\n  child: $0,\n)", "priority": 8 },
+    { "name": "Center", "category": "layout", "description": "توسيط", "snippet": "Center(\n  child: $0,\n)", "priority": 9 },
+    { "name": "Wrap", "category": "layout", "description": "التفاف", "snippet": "Wrap(\n  spacing: 8.0,\n  runSpacing: 8.0,\n  children: [\n    $0\n  ],\n)", "priority": 8 },
+    { "name": "Flex", "category": "layout", "description": "مرن أساسي", "snippet": "Flex(\n  direction: Axis.horizontal,\n  children: [\n    $0\n  ],\n)", "priority": 6 },
+    { "name": "Flow", "category": "layout", "description": "تدفق", "snippet": "Flow(\n  delegate: FlowDelegate(),\n  children: [\n    $0\n  ],\n)", "priority": 4 },
+    { "name": "ConstrainedBox", "category": "layout", "description": "صندوق مقيّد", "snippet": "ConstrainedBox(\n  constraints: const BoxConstraints(\n    maxWidth: 300.0,\n  ),\n  child: $0,\n)", "priority": 7 },
+    { "name": "LimitedBox", "category": "layout", "description": "صندوق محدود", "snippet": "LimitedBox(\n  maxWidth: 200.0,\n  maxHeight: 200.0,\n  child: $0,\n)", "priority": 5 },
+    { "name": "AspectRatio", "category": "layout", "description": "نسبة أبعاد", "snippet": "AspectRatio(\n  aspectRatio: 16.0 / 9.0,\n  child: $0,\n)", "priority": 7 },
+    { "name": "FractionallySizedBox", "category": "layout", "description": "نسبة من المساحة", "snippet": "FractionallySizedBox(\n  widthFactor: 0.5,\n  heightFactor: 0.5,\n  child: $0,\n)", "priority": 6 },
+    { "name": "IntrinsicHeight", "category": "layout", "description": "ارتفاع تلقائي", "snippet": "IntrinsicHeight(\n  child: $0,\n)", "priority": 5 },
+    { "name": "IntrinsicWidth", "category": "layout", "description": "عرض تلقائي", "snippet": "IntrinsicWidth(\n  child: $0,\n)", "priority": 5 },
+    { "name": "Baseline", "category": "layout", "description": "محاذاة أساسية", "snippet": "Baseline(\n  baseline: 0.0,\n  baselineType: TextBaseline.alphabetic,\n  child: $0,\n)", "priority": 3 },
+    { "name": "Offstage", "category": "layout", "description": "إخفاء/إظهار", "snippet": "Offstage(\n  offstage: true,\n  child: $0,\n)", "priority": 5 },
+    { "name": "OverflowBox", "category": "layout", "description": "تجاوز الحدود", "snippet": "OverflowBox(\n  minWidth: 0.0,\n  maxWidth: 100.0,\n  child: $0,\n)", "priority": 3 },
+    { "name": "SizedOverflowBox", "category": "layout", "description": "قياس مخصص", "snippet": "SizedOverflowBox(\n  size: const Size(100, 100),\n  child: $0,\n)", "priority": 3 },
+    { "name": "UnconstrainedBox", "category": "layout", "description": "بدون قيود", "snippet": "UnconstrainedBox(\n  child: $0,\n)", "priority": 3 },
+    { "name": "IndexedStack", "category": "layout", "description": "Stack مفهرس", "snippet": "IndexedStack(\n  index: 0,\n  children: [\n    $0\n  ],\n)", "priority": 5 },
+    { "name": "Table", "category": "layout", "description": "جدول", "snippet": "Table(\n  children: [\n    TableRow(\n      children: [\n        Text('Cell'),\n      ],\n    ),\n  ],\n)", "priority": 4 },
+    { "name": "TableRow", "category": "layout", "description": "صف جدول", "snippet": "TableRow(\n  children: [\n    $0\n  ],\n)", "priority": 3 },
+    { "name": "ListBody", "category": "layout", "description": "قائمة بسيطة", "snippet": "ListBody(\n  children: [\n    $0\n  ],\n)", "priority": 3 },
+    { "name": "CustomMultiChildLayout", "category": "layout", "description": "تخطيط مخصص متعدد", "snippet": "CustomMultiChildLayout(\n  delegate: CustomMultiChildLayoutDelegate(),\n  children: [\n    $0\n  ],\n)", "priority": 2 },
+    { "name": "CustomSingleChildLayout", "category": "layout", "description": "تخطيط مخصص مفرد", "snippet": "CustomSingleChildLayout(\n  delegate: SingleChildLayoutDelegate(),\n  child: $0,\n)", "priority": 2 },
+    { "name": "LayoutBuilder", "category": "layout", "description": "بناء حسب القياسات", "snippet": "LayoutBuilder(\n  builder: (context, constraints) {\n    return $0;\n  },\n)", "priority": 7 },
+    { "name": "OrientationBuilder", "category": "layout", "description": "بناء حسب الاتجاه", "snippet": "OrientationBuilder(\n  builder: (context, orientation) {\n    return $0;\n  },\n)", "priority": 5 },
+
+    // ══════════════════════════════════════════════════════════
+    // Material الأساسية
+    // ══════════════════════════════════════════════════════════
+    { "name": "MaterialApp", "category": "material", "description": "تطبيق Material", "snippet": "MaterialApp(\n  title: 'My App',\n  theme: ThemeData(\n    primarySwatch: Colors.blue,\n  ),\n  home: const MyHomePage(),\n)", "priority": 10 },
+    { "name": "Scaffold", "category": "material", "description": "هيكل صفحة", "snippet": "Scaffold(\n  appBar: AppBar(\n    title: const Text('Title'),\n  ),\n  body: $0,\n)", "priority": 10 },
+    { "name": "AppBar", "category": "material", "description": "شريط علوي", "snippet": "AppBar(\n  title: const Text('Title'),\n  actions: [\n    IconButton(\n      icon: const Icon(Icons.search),\n      onPressed: () {},\n    ),\n  ],\n)", "priority": 10 },
+    { "name": "Material", "category": "material", "description": "طبقة Material", "snippet": "Material(\n  elevation: 2.0,\n  borderRadius: BorderRadius.circular(8.0),\n  child: $0,\n)", "priority": 6 },
+    { "name": "Card", "category": "material", "description": "بطاقة", "snippet": "Card(\n  elevation: 4.0,\n  child: Padding(\n    padding: const EdgeInsets.all(16.0),\n    child: $0,\n  ),\n)", "priority": 9 },
+    { "name": "Text", "category": "material", "description": "نص", "snippet": "const Text(\n  'Hello',\n  style: TextStyle(\n    fontSize: 16.0,\n    color: Colors.black,\n  ),\n)", "priority": 10 },
+    { "name": "RichText", "category": "material", "description": "نص منسّق", "snippet": "RichText(\n  text: TextSpan(\n    text: 'Hello',\n    style: const TextStyle(color: Colors.black),\n    children: [\n      TextSpan(text: ' World'),\n    ],\n  ),\n)", "priority": 6 },
+    { "name": "SelectableText", "category": "material", "description": "نص قابل للتحديد", "snippet": "SelectableText(\n  'Hello',\n  style: const TextStyle(fontSize: 16.0),\n)", "priority": 5 },
+    { "name": "Icon", "category": "material", "description": "أيقونة", "snippet": "const Icon(\n  Icons.home,\n  size: 24.0,\n  color: Colors.black,\n)", "priority": 9 },
+    { "name": "Image", "category": "material", "description": "صورة", "snippet": "Image.network(\n  'https://example.com/image.png',\n  width: 100.0,\n  height: 100.0,\n  fit: BoxFit.cover,\n)", "priority": 9 },
+    { "name": "IconButton", "category": "material", "description": "زر أيقونة", "snippet": "IconButton(\n  icon: const Icon(Icons.add),\n  onPressed: () {\n    $0\n  },\n)", "priority": 9 },
+    { "name": "ElevatedButton", "category": "material", "description": "زر مرتفع", "snippet": "ElevatedButton(\n  onPressed: () {\n    $0\n  },\n  child: const Text('Button'),\n)", "priority": 9 },
+    { "name": "TextButton", "category": "material", "description": "زر نصي", "snippet": "TextButton(\n  onPressed: () {\n    $0\n  },\n  child: const Text('Button'),\n)", "priority": 8 },
+    { "name": "OutlinedButton", "category": "material", "description": "زر محدّد", "snippet": "OutlinedButton(\n  onPressed: () {\n    $0\n  },\n  child: const Text('Button'),\n)", "priority": 8 },
+    { "name": "FloatingActionButton", "category": "material", "description": "زر عائم", "snippet": "FloatingActionButton(\n  onPressed: () {\n    $0\n  },\n  child: const Icon(Icons.add),\n)", "priority": 9 },
+    { "name": "InkWell", "category": "material", "description": "منطقة لمس مع تموّج", "snippet": "InkWell(\n  onTap: () {\n    $0\n  },\n  child: const SizedBox(),\n)", "priority": 8 },
+    { "name": "InkResponse", "category": "material", "description": "استجابة لمس", "snippet": "InkResponse(\n  onTap: () {\n    $0\n  },\n  child: const SizedBox(),\n)", "priority": 5 },
+    { "name": "ListTile", "category": "material", "description": "عنصر قائمة", "snippet": "ListTile(\n  leading: const Icon(Icons.person),\n  title: const Text('Title'),\n  subtitle: const Text('Subtitle'),\n  trailing: const Icon(Icons.arrow_forward),\n  onTap: () {\n    $0\n  },\n)", "priority": 9 },
+    { "name": "CircleAvatar", "category": "material", "description": "صورة دائرية", "snippet": "CircleAvatar(\n  radius: 24.0,\n  backgroundColor: Colors.blue,\n  child: const Icon(Icons.person),\n)", "priority": 7 },
+    { "name": "Divider", "category": "material", "description": "فاصل", "snippet": "const Divider(\n  height: 1.0,\n  thickness: 1.0,\n)", "priority": 7 },
+    { "name": "VerticalDivider", "category": "material", "description": "فاصل عمودي", "snippet": "const VerticalDivider(\n  width: 1.0,\n  thickness: 1.0,\n)", "priority": 5 },
+    { "name": "Chip", "category": "material", "description": "شرائح صغيرة", "snippet": "Chip(\n  avatar: const CircleAvatar(child: Text('A')),\n  label: const Text('Chip'),\n  onDeleted: () {},\n)", "priority": 6 },
+    { "name": "Tooltip", "category": "material", "description": "تلميح", "snippet": "Tooltip(\n  message: 'Tooltip text',\n  child: $0,\n)", "priority": 5 },
+    { "name": "SnackBar", "category": "material", "description": "رسالة سفلية", "snippet": "const SnackBar(\n  content: Text('Message'),\n  duration: Duration(seconds: 2),\n)", "priority": 7 },
+    { "name": "AlertDialog", "category": "material", "description": "حوار", "snippet": "AlertDialog(\n  title: const Text('Title'),\n  content: const Text('Message'),\n  actions: [\n    TextButton(\n      onPressed: () => Navigator.pop(context),\n      child: const Text('OK'),\n    ),\n  ],\n)", "priority": 8 },
+    { "name": "SimpleDialog", "category": "material", "description": "حوار بسيط", "snippet": "SimpleDialog(\n  title: const Text('Choose'),\n  children: [\n    SimpleDialogOption(\n      onPressed: () {},\n      child: const Text('Option'),\n    ),\n  ],\n)", "priority": 5 },
+    { "name": "SimpleDialogOption", "category": "material", "description": "خيار حوار", "snippet": "SimpleDialogOption(\n  onPressed: () {\n    $0\n  },\n  child: const Text('Option'),\n)", "priority": 4 },
+    { "name": "Dialog", "category": "material", "description": "حوار عام", "snippet": "Dialog(\n  child: Container(\n    padding: const EdgeInsets.all(16.0),\n    child: $0,\n  ),\n)", "priority": 6 },
+    { "name": "Drawer", "category": "material", "description": "قائمة جانبية", "snippet": "Drawer(\n  child: ListView(\n    padding: EdgeInsets.zero,\n    children: [\n      const DrawerHeader(\n        child: Text('Header'),\n      ),\n      ListTile(\n        leading: const Icon(Icons.home),\n        title: const Text('Home'),\n        onTap: () {},\n      ),\n    ],\n  ),\n)", "priority": 6 },
+    { "name": "DrawerHeader", "category": "material", "description": "ترويسة القائمة", "snippet": "DrawerHeader(\n  decoration: const BoxDecoration(\n    color: Colors.blue,\n  ),\n  child: $0,\n)", "priority": 5 },
+    { "name": "UserAccountsDrawerHeader", "category": "material", "description": "ترويسة حساب", "snippet": "UserAccountsDrawerHeader(\n  accountName: const Text('Name'),\n  accountEmail: const Text('email@example.com'),\n  currentAccountPicture: const CircleAvatar(),\n)", "priority": 4 },
+    { "name": "BottomNavigationBar", "category": "material", "description": "شريط سفلي", "snippet": "BottomNavigationBar(\n  currentIndex: 0,\n  onTap: (index) {},\n  items: const [\n    BottomNavigationBarItem(\n      icon: Icon(Icons.home),\n      label: 'Home',\n    ),\n    BottomNavigationBarItem(\n      icon: Icon(Icons.search),\n      label: 'Search',\n    ),\n  ],\n)", "priority": 7 },
+    { "name": "BottomNavigationBarItem", "category": "material", "description": "عنصر شريط سفلي", "snippet": "BottomNavigationBarItem(\n  icon: const Icon(Icons.home),\n  label: 'Label',\n)", "priority": 4 },
+    { "name": "NavigationBar", "category": "material", "description": "شريط تنقل Material 3", "snippet": "NavigationBar(\n  selectedIndex: 0,\n  onDestinationSelected: (index) {},\n  destinations: const [\n    NavigationDestination(\n      icon: Icon(Icons.home),\n      label: 'Home',\n    ),\n  ],\n)", "priority": 6 },
+    { "name": "NavigationDestination", "category": "material", "description": "وجهة تنقل", "snippet": "NavigationDestination(\n  icon: const Icon(Icons.home),\n  label: 'Home',\n)", "priority": 4 },
+    { "name": "TabBar", "category": "material", "description": "شريط تبويبات", "snippet": "TabBar(\n  tabs: const [\n    Tab(text: 'Tab 1'),\n    Tab(text: 'Tab 2'),\n  ],\n)", "priority": 6 },
+    { "name": "TabBarView", "category": "material", "description": "محتوى التبويبات", "snippet": "TabBarView(\n  children: const [\n    Center(child: Text('Tab 1')),\n    Center(child: Text('Tab 2')),\n  ],\n)", "priority": 6 },
+    { "name": "Tab", "category": "material", "description": "تبويب", "snippet": "const Tab(\n  text: 'Tab',\n)", "priority": 4 },
+    { "name": "DefaultTabController", "category": "material", "description": "متحكم التبويبات", "snippet": "DefaultTabController(\n  length: 2,\n  child: Scaffold(\n    appBar: AppBar(\n      bottom: const TabBar(\n        tabs: [\n          Tab(text: 'Tab 1'),\n          Tab(text: 'Tab 2'),\n        ],\n      ),\n    ),\n    body: const TabBarView(\n      children: [\n        Center(child: Text('Tab 1')),\n        Center(child: Text('Tab 2')),\n      ],\n    ),\n  ),\n)", "priority": 5 },
+    { "name": "Stepper", "category": "material", "description": "خطوات", "snippet": "Stepper(\n  currentStep: 0,\n  steps: const [\n    Step(\n      title: Text('Step 1'),\n      content: Text('Content'),\n    ),\n  ],\n  onStepContinue: () {},\n  onStepCancel: () {},\n)", "priority": 5 },
+    { "name": "Step", "category": "material", "description": "خطوة", "snippet": "Step(\n  title: const Text('Title'),\n  subtitle: const Text('Subtitle'),\n  content: const Text('Content'),\n  isActive: true,\n)", "priority": 3 },
+    { "name": "ExpansionTile", "category": "material", "description": "عنصر قابل للتوسيع", "snippet": "ExpansionTile(\n  title: const Text('Title'),\n  children: [\n    $0\n  ],\n)", "priority": 6 },
+    { "name": "ExpansionPanelList", "category": "material", "description": "قائمة قابلة للتوسيع", "snippet": "ExpansionPanelList(\n  elevation: 1,\n  children: [\n    ExpansionPanel(\n      headerBuilder: (context, isExpanded) {\n        return const Text('Header');\n      },\n      body: const Text('Body'),\n      isExpanded: false,\n    ),\n  ],\n)", "priority": 4 },
+    { "name": "ExpansionPanel", "category": "material", "description": "لوحة قابلة للتوسيع", "snippet": "ExpansionPanel(\n  headerBuilder: (context, isExpanded) {\n    return const Text('Header');\n  },\n  body: const Text('Body'),\n  isExpanded: false,\n)", "priority": 3 },
+    { "name": "AppBarTitle", "category": "material", "description": "عنوان الشريط", "snippet": "const Text('Title')", "priority": 3 },
+    { "name": "DividerTheme", "category": "material", "description": "نمط الفواصل", "snippet": "DividerTheme(\n  data: const DividerThemeData(\n    color: Colors.grey,\n    thickness: 1.0,\n  ),\n  child: $0,\n)", "priority": 3 },
+    { "name": "Theme", "category": "material", "description": "تطبيق مظهر", "snippet": "Theme(\n  data: ThemeData(\n    primarySwatch: Colors.blue,\n  ),\n  child: $0,\n)", "priority": 5 },
+    { "name": "MediaQuery", "category": "material", "description": "بيانات الوسائط", "snippet": "MediaQuery(\n  data: MediaQuery.of(context),\n  child: $0,\n)", "priority": 5 },
+    { "name": "Localizations", "category": "material", "description": "الترجمة", "snippet": "Localizations(\n  locale: const Locale('en'),\n  delegates: const [],\n  child: $0,\n)", "priority": 3 },
+    { "name": "Directionality", "category": "material", "description": "اتجاه", "snippet": "Directionality(\n  textDirection: TextDirection.ltr,\n  child: $0,\n)", "priority": 4 },
+    { "name": "Semantics", "category": "material", "description": "دلالات الوصول", "snippet": "Semantics(\n  label: 'Description',\n  child: $0,\n)", "priority": 4 },
+    { "name": "MergeSemantics", "category": "material", "description": "دمج الدلالات", "snippet": "MergeSemantics(\n  child: $0,\n)", "priority": 3 },
+    { "name": "ExcludeSemantics", "category": "material", "description": "إخفاء من الوصول", "snippet": "ExcludeSemantics(\n  child: $0,\n)", "priority": 3 },
+    { "name": "BlockSemantics", "category": "material", "description": "حجب الدلالات", "snippet": "BlockSemantics(\n  child: $0,\n)", "priority": 2 },
+
+    // ══════════════════════════════════════════════════════════
+    // App-Level Widgets
+    // ══════════════════════════════════════════════════════════
+    { "name": "WidgetsApp", "category": "app", "description": "تطبيق عام", "snippet": "WidgetsApp(\n  color: Colors.blue,\n  home: const SizedBox(),\n)", "priority": 4 },
+    { "name": "DefaultTextStyle", "category": "app", "description": "نمط نص افتراضي", "snippet": "DefaultTextStyle(\n  style: const TextStyle(fontSize: 14.0),\n  child: $0,\n)", "priority": 4 },
+    { "name": "DefaultAssetBundle", "category": "app", "description": "حزمة أصول افتراضية", "snippet": "DefaultAssetBundle(\n  bundle: DefaultAssetBundle.of(context),\n  child: $0,\n)", "priority": 3 },
+
+    // ══════════════════════════════════════════════════════════
+    // Accessibility
+    // ══════════════════════════════════════════════════════════
+    { "name": "Semantics", "category": "accessibility", "description": "دلالات", "snippet": "Semantics(\n  label: 'Label',\n  button: true,\n  child: $0,\n)", "priority": 4 },
+
+    // ══════════════════════════════════════════════════════════
+    // Gestures & Interaction
+    // ══════════════════════════════════════════════════════════
+    { "name": "GestureDetector", "category": "gesture", "description": "كاشف إيماءات", "snippet": "GestureDetector(\n  onTap: () {\n    $0\n  },\n  child: const SizedBox(),\n)", "priority": 9 },
+    { "name": "Dismissible", "category": "gesture", "description": "قابل للسحب للإزالة", "snippet": "Dismissible(\n  key: const Key('unique_key'),\n  background: Container(color: Colors.red),\n  onDismissed: (direction) {\n    $0\n  },\n  child: const ListTile(\n    title: Text('Item'),\n  ),\n)", "priority": 6 },
+    { "name": "Draggable", "category": "gesture", "description": "قابل للسحب", "snippet": "Draggable<String>(\n  data: 'data',\n  feedback: const Text('Dragging'),\n  child: const Text('Drag me'),\n)", "priority": 4 },
+    { "name": "DragTarget", "category": "gesture", "description": "هدف السحب", "snippet": "DragTarget<String>(\n  builder: (context, candidateData, rejectedData) {\n    return const SizedBox();\n  },\n  onAccept: (data) {\n    $0\n  },\n)", "priority": 4 },
+    { "name": "LongPressDraggable", "category": "gesture", "description": "سحب بالضغط الطويل", "snippet": "LongPressDraggable<String>(\n  data: 'data',\n  feedback: const Text('Dragging'),\n  child: const Text('Long press'),\n)", "priority": 3 },
+    { "name": "MouseRegion", "category": "gesture", "description": "منطقة الفأرة", "snippet": "MouseRegion(\n  cursor: SystemMouseCursors.click,\n  onEnter: (event) {},\n  onExit: (event) {},\n  child: $0,\n)", "priority": 3 },
+    { "name": "Listener", "category": "gesture", "description": "مستمع الأحداث", "snippet": "Listener(\n  onPointerDown: (event) {},\n  onPointerUp: (event) {},\n  child: $0,\n)", "priority": 4 },
+    { "name": "RawGestureDetector", "category": "gesture", "description": "كاشف إيماءات خام", "snippet": "RawGestureDetector(\n  gestures: {},\n  child: $0,\n)", "priority": 2 },
+    { "name": "AbsorbPointer", "category": "gesture", "description": "امتصاص اللمس", "snippet": "AbsorbPointer(\n  absorbing: true,\n  child: $0,\n)", "priority": 4 },
+    { "name": "IgnorePointer", "category": "gesture", "description": "تجاهل اللمس", "snippet": "IgnorePointer(\n  ignoring: true,\n  child: $0,\n)", "priority": 4 },
+    { "name": "RepaintBoundary", "category": "gesture", "description": "حدود إعادة الرسم", "snippet": "RepaintBoundary(\n  child: $0,\n)", "priority": 3 },
+    { "name": "Focus", "category": "gesture", "description": "تركيز", "snippet": "Focus(\n  focusNode: FocusNode(),\n  child: $0,\n)", "priority": 4 },
+    { "name": "FocusScope", "category": "gesture", "description": "نطاق التركيز", "snippet": "FocusScope(\n  node: FocusScopeNode(),\n  child: $0,\n)", "priority": 3 },
+    { "name": "FocusTraversalGroup", "category": "gesture", "description": "مجموعة التنقل بالتركيز", "snippet": "FocusTraversalGroup(\n  policy: ReadingOrderTraversalPolicy(),\n  child: $0,\n)", "priority": 2 },
+    { "name": "Shortcuts", "category": "gesture", "description": "اختصارات لوحة المفاتيح", "snippet": "Shortcuts(\n  shortcuts: const {\n    SingleActivator(LogicalKeyboardKey.keyS, control: true): ActivateIntent(),\n  },\n  child: $0,\n)", "priority": 3 },
+    { "name": "Actions", "category": "gesture", "description": "إجراءات", "snippet": "Actions(\n  actions: {},\n  child: $0,\n)", "priority": 2 },
+
+    // ══════════════════════════════════════════════════════════
+    // Animation & Transition
+    // ══════════════════════════════════════════════════════════
+    { "name": "AnimatedContainer", "category": "animation", "description": "Container متحرك", "snippet": "AnimatedContainer(\n  duration: const Duration(milliseconds: 300),\n  curve: Curves.easeInOut,\n  color: Colors.blue,\n  width: 100.0,\n  height: 100.0,\n  child: $0,\n)", "priority": 7 },
+    { "name": "AnimatedOpacity", "category": "animation", "description": "شفافية متحركة", "snippet": "AnimatedOpacity(\n  duration: const Duration(milliseconds: 300),\n  opacity: 0.5,\n  child: $0,\n)", "priority": 7 },
+    { "name": "AnimatedPadding", "category": "animation", "description": "حشوة متحركة", "snippet": "AnimatedPadding(\n  duration: const Duration(milliseconds: 300),\n  padding: const EdgeInsets.all(8.0),\n  child: $0,\n)", "priority": 5 },
+    { "name": "AnimatedAlign", "category": "animation", "description": "محاذاة متحركة", "snippet": "AnimatedAlign(\n  duration: const Duration(milliseconds: 300),\n  alignment: Alignment.center,\n  child: $0,\n)", "priority": 5 },
+    { "name": "AnimatedPositioned", "category": "animation", "description": "موقع متحرك", "snippet": "AnimatedPositioned(\n  duration: const Duration(milliseconds: 300),\n  top: 0,\n  left: 0,\n  child: $0,\n)", "priority": 5 },
+    { "name": "AnimatedSwitcher", "category": "animation", "description": "مبدّل متحرك", "snippet": "AnimatedSwitcher(\n  duration: const Duration(milliseconds: 300),\n  child: $0,\n)", "priority": 5 },
+    { "name": "AnimatedCrossFade", "category": "animation", "description": "تلاشي متقاطع", "snippet": "AnimatedCrossFade(\n  duration: const Duration(milliseconds: 300),\n  firstChild: const SizedBox(),\n  secondChild: const SizedBox(),\n  crossFadeState: CrossFadeState.showFirst,\n)", "priority": 4 },
+    { "name": "AnimatedDefaultTextStyle", "category": "animation", "description": "نمط نص متحرك", "snippet": "AnimatedDefaultTextStyle(\n  duration: const Duration(milliseconds: 300),\n  style: const TextStyle(fontSize: 16.0),\n  child: $0,\n)", "priority": 4 },
+    { "name": "AnimatedBuilder", "category": "animation", "description": "باني متحرك", "snippet": "AnimatedBuilder(\n  animation: animation,\n  builder: (context, child) {\n    return $0;\n  },\n)", "priority": 6 },
+    { "name": "FadeTransition", "category": "animation", "description": "انتقال تلاشٍ", "snippet": "FadeTransition(\n  opacity: animation,\n  child: $0,\n)", "priority": 6 },
+    { "name": "ScaleTransition", "category": "animation", "description": "انتقال تكبير", "snippet": "ScaleTransition(\n  scale: animation,\n  child: $0,\n)", "priority": 5 },
+    { "name": "SlideTransition", "category": "animation", "description": "انتقال انزلاق", "snippet": "SlideTransition(\n  position: animation,\n  child: $0,\n)", "priority": 5 },
+    { "name": "RotationTransition", "category": "animation", "description": "انتقال دوران", "snippet": "RotationTransition(\n  turns: animation,\n  child: $0,\n)", "priority": 5 },
+    { "name": "SizeTransition", "category": "animation", "description": "انتقال حجم", "snippet": "SizeTransition(\n  sizeFactor: animation,\n  child: $0,\n)", "priority": 5 },
+    { "name": "PositionedTransition", "category": "animation", "description": "انتقال موقع", "snippet": "PositionedTransition(\n  rect: animation,\n  child: $0,\n)", "priority": 3 },
+    { "name": "AlignTransition", "category": "animation", "description": "انتقال محاذاة", "snippet": "AlignTransition(\n  alignment: animation,\n  child: $0,\n)", "priority": 3 },
+    { "name": "DecoratedBoxTransition", "category": "animation", "description": "انتقال تزيين", "snippet": "DecoratedBoxTransition(\n  decoration: animation,\n  child: $0,\n)", "priority": 3 },
+    { "name": "DefaultTextStyleTransition", "category": "animation", "description": "انتقال نمط نص", "snippet": "DefaultTextStyleTransition(\n  style: animation,\n  child: $0,\n)", "priority": 3 },
+    { "name": "RelativePositionedTransition", "category": "animation", "description": "انتقال موقع نسبي", "snippet": "RelativePositionedTransition(\n  rect: animation,\n  size: const Size(100, 100),\n  child: $0,\n)", "priority": 2 },
+    { "name": "DualTransitionBuilder", "category": "animation", "description": "باني انتقال مزدوج", "snippet": "DualTransitionBuilder(\n  duration: const Duration(milliseconds: 300),\n  builder: (context, animation, secondaryAnimation, child) {\n    return child!;\n  },\n  child: $0,\n)", "priority": 2 },
+    { "name": "Hero", "category": "animation", "description": "انتقال Hero", "snippet": "Hero(\n  tag: 'hero_tag',\n  child: $0,\n)", "priority": 6 },
+    { "name": "TweenAnimationBuilder", "category": "animation", "description": "باني حركة Tween", "snippet": "TweenAnimationBuilder<double>(\n  tween: Tween(begin: 0.0, end: 1.0),\n  duration: const Duration(milliseconds: 300),\n  builder: (context, value, child) {\n    return $0;\n  },\n)", "priority": 5 },
+    { "name": "ClipRect", "category": "animation", "description": "قص مستطيل", "snippet": "ClipRect(\n  child: $0,\n)", "priority": 4 },
+    { "name": "ClipRRect", "category": "animation", "description": "قص بزوايا دائرية", "snippet": "ClipRRect(\n  borderRadius: BorderRadius.circular(8.0),\n  child: $0,\n)", "priority": 7 },
+    { "name": "ClipOval", "category": "animation", "description": "قص بيضاوي", "snippet": "ClipOval(\n  child: $0,\n)", "priority": 5 },
+    { "name": "ClipPath", "category": "animation", "description": "قص بمسار", "snippet": "ClipPath(\n  clipper: CustomClipper<Path>(),\n  child: $0,\n)", "priority": 4 },
+    { "name": "Transform", "category": "animation", "description": "تحويل", "snippet": "Transform.scale(\n  scale: 1.0,\n  child: $0,\n)", "priority": 6 },
+    { "name": "RotatedBox", "category": "animation", "description": "صندوق مُدار", "snippet": "RotatedBox(\n  quarterTurns: 1,\n  child: $0,\n)", "priority": 4 },
+    { "name": "Opacity", "category": "animation", "description": "شفافية", "snippet": "Opacity(\n  opacity: 0.5,\n  child: $0,\n)", "priority": 6 },
+    { "name": "ShaderMask", "category": "animation", "description": "قناع Shader", "snippet": "ShaderMask(\n  shaderCallback: (bounds) {\n    return LinearGradient(\n      colors: [Colors.black, Colors.transparent],\n    ).createShader(bounds);\n  },\n  child: $0,\n)", "priority": 4 },
+    { "name": "BackdropFilter", "category": "animation", "description": "فلتر خلفي", "snippet": "BackdropFilter(\n  filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),\n  child: $0,\n)", "priority": 4 },
+    { "name": "ColorFiltered", "category": "animation", "description": "تصفية الألوان", "snippet": "ColorFiltered(\n  colorFilter: const ColorFilter.mode(Colors.red, BlendMode.multiply),\n  child: $0,\n)", "priority": 4 },
+    { "name": "ImageFiltered", "category": "animation", "description": "تصفية الصورة", "snippet": "ImageFiltered(\n  imageFilter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),\n  child: $0,\n)", "priority": 3 },
+
+    // ══════════════════════════════════════════════════════════
+    // Painting
+    // ══════════════════════════════════════════════════════════
+    { "name": "CustomPaint", "category": "painting", "description": "رسم مخصص", "snippet": "CustomPaint(\n  size: const Size(200, 200),\n  painter: MyPainter(),\n)", "priority": 6 },
+    { "name": "DecoratedBox", "category": "painting", "description": "صندوق مزيّن", "snippet": "DecoratedBox(\n  decoration: BoxDecoration(\n    color: Colors.blue,\n    borderRadius: BorderRadius.circular(8.0),\n  ),\n  child: $0,\n)", "priority": 5 },
+    { "name": "ColoredBox", "category": "painting", "description": "صندوق ملوّن", "snippet": "ColoredBox(\n  color: Colors.blue,\n  child: $0,\n)", "priority": 4 },
+    { "name": "Image", "category": "painting", "description": "صورة", "snippet": "Image.asset(\n  'assets/image.png',\n  width: 100.0,\n  height: 100.0,\n  fit: BoxFit.cover,\n)", "priority": 8 },
+
+    // ══════════════════════════════════════════════════════════
+    // Async
+    // ══════════════════════════════════════════════════════════
+    { "name": "FutureBuilder", "category": "async", "description": "باني Future", "snippet": "FutureBuilder<dynamic>(\n  future: _loadData(),\n  builder: (context, snapshot) {\n    if (snapshot.connectionState == ConnectionState.waiting) {\n      return const CircularProgressIndicator();\n    }\n    if (snapshot.hasError) {\n      return Text('Error: ${snapshot.error}');\n    }\n    return Text('Data: ${snapshot.data}');\n  },\n)", "priority": 8 },
+    { "name": "StreamBuilder", "category": "async", "description": "باني Stream", "snippet": "StreamBuilder<dynamic>(\n  stream: _stream,\n  builder: (context, snapshot) {\n    if (!snapshot.hasData) {\n      return const CircularProgressIndicator();\n    }\n    return Text('Data: ${snapshot.data}');\n  },\n)", "priority": 7 },
+    { "name": "ValueListenableBuilder", "category": "async", "description": "باني ValueListenable", "snippet": "ValueListenableBuilder<dynamic>(\n  valueListenable: notifier,\n  builder: (context, value, child) {\n    return Text('$value');\n  },\n)", "priority": 6 },
+    { "name": "ListenableBuilder", "category": "async", "description": "باني Listenable", "snippet": "ListenableBuilder(\n  listenable: notifier,\n  builder: (context, child) {\n    return $0;\n  },\n)", "priority": 5 },
+
+    // ══════════════════════════════════════════════════════════
+    // Progress
+    // ══════════════════════════════════════════════════════════
+    { "name": "CircularProgressIndicator", "category": "progress", "description": "مؤشر دائري", "snippet": "const CircularProgressIndicator(\n  strokeWidth: 4.0,\n  color: Colors.blue,\n)", "priority": 8 },
+    { "name": "LinearProgressIndicator", "category": "progress", "description": "مؤشر خطي", "snippet": "const LinearProgressIndicator(\n  value: 0.5,\n  backgroundColor: Colors.grey,\n  color: Colors.blue,\n)", "priority": 7 },
+    { "name": "RefreshIndicator", "category": "progress", "description": "مؤشر التحديث", "snippet": "RefreshIndicator(\n  onRefresh: () async {\n    $0\n  },\n  child: ListView(),\n)", "priority": 6 },
+
+    // ══════════════════════════════════════════════════════════
+    // Others
+    // ══════════════════════════════════════════════════════════
+    { "name": "SafeArea", "category": "layout", "description": "منطقة آمنة", "snippet": "SafeArea(\n  child: $0,\n)", "priority": 8 },
+    { "name": "Builder", "category": "layout", "description": "باني عام", "snippet": "Builder(\n  builder: (context) {\n    return $0;\n  },\n)", "priority": 6 },
+    { "name": "Placeholder", "category": "layout", "description": "عنصر مؤقت", "snippet": "const Placeholder(\n  color: Colors.grey,\n  strokeWidth: 1.0,\n  fallbackWidth: 100.0,\n  fallbackHeight: 100.0,\n)", "priority": 5 },
+    { "name": "Spacer", "category": "layout", "description": "فاصل مرن", "snippet": "const Spacer(\n  flex: 1,\n)", "priority": 7 }
+  ]
+}
